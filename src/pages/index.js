@@ -9,6 +9,7 @@ import Form from "../components/Contact";
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <a href="./static/steven.kveton.pdf" target="__blank">Resume</a>
     <Form/>
   </Layout>
 )
