@@ -12,8 +12,10 @@ import  {
   MainContainer
 } from "./styled";
 
-import "../../css/normalize.css";
-import "../../css/typography.css";
+
+import "../../css/normalize.scss";
+import "../../css/global.scss";
+import "../../css/typography.scss";
 
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
