@@ -1,10 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Li, Nav } from "./styled"
+import { Li } from "./styled"
 
 const Navigation = () => {
   return (
-    <Nav>
+    <nav>
       <ul>
         <Li id="aboutme">
           <Link to="/aboutme">About Me</Link>
@@ -21,7 +21,7 @@ const Navigation = () => {
           <Link to="/projects">Projects</Link>
         </Li>
       </ul>
-    </Nav>
+    </nav>
   )
 }
 

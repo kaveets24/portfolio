@@ -1,9 +1,6 @@
 import styled from "styled-components"
 import { styleguide } from "../../utils"
 
-export const Nav = styled.nav`
-  background-color: ${styleguide.backgroundColor} !important;
-`
 export const Li = styled.li`
   font-size: ${styleguide.fontLarge};
   position: absolute;
