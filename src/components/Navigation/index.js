@@ -3,21 +3,23 @@ import { Link } from "gatsby"
 import { Li } from "./styled"
 
 const Navigation = () => {
+  const animationTime = "0.5s";
+  const animationDelay = "4s";
   return (
     <nav>
       <ul>
-        <Li id="aboutme">
+        <Li position={"top"} animationTime={animationTime} animationDelay={animationDelay}>
           <Link to="/aboutme">About Me</Link>
         </Li>
-        <Li id="resume">
+        <Li position={"right"} animationTime={animationTime} animationDelay={animationDelay}>
           <a href="./static/steven.kveton.pdf" target="__blank">
             Resume
           </a>
         </Li>
-        <Li id="contact">
+        <Li position={"bottom"} animationTime={animationTime} animationDelay={animationDelay}>
           <Link to="/contact">Contact</Link>
         </Li>
-        <Li id="projects">
+        <Li position={"left"} animationTime={animationTime} animationDelay={animationDelay}>
           <Link to="/projects">Projects</Link>
         </Li>
       </ul>

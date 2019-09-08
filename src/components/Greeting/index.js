@@ -1,11 +1,11 @@
 import React from "react"
-import { GreetingContainer } from "./styled"
+import { GreetingContainer, FadeInSpan } from "./styled"
 
 const Greeting = () => {
   return (
     <GreetingContainer>
-      <div>Hi there, I'm Steven.</div>
-      <div>I'm a Front-End Developer living in Chicago.</div>
+      <FadeInSpan animationTime={"1s"} animationDelay={"1s"} >Hi there, I'm Steven.</FadeInSpan>
+      <FadeInSpan animationTime={"1s"} animationDelay={"2s"} >I'm a Front-End Developer living in Chicago.</FadeInSpan>
     </GreetingContainer>
   )
 }
