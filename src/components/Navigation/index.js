@@ -1,27 +1,27 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Li } from "./styled"
+import { TopLi, RightLi, BottomLi, LeftLi } from "./styled"
 
 const Navigation = () => {
-  const animationTime = "0.5s";
-  const animationDelay = "4s";
+  const animationTime = "0.7s";
+  const animationDelay = "2s";
   return (
     <nav>
       <ul>
-        <Li position={"top"} animationTime={animationTime} animationDelay={animationDelay}>
+        <TopLi animation={"moveFromTop"} animationTime={animationTime} animationDelay={animationDelay}>
           <Link to="/aboutme">About Me</Link>
-        </Li>
-        <Li position={"right"} animationTime={animationTime} animationDelay={animationDelay}>
+        </TopLi>
+        <RightLi animation={"moveFromRight"} animationTime={animationTime} animationDelay={"2.1s"}>
           <a href="./static/steven.kveton.pdf" target="__blank">
             Resume
           </a>
-        </Li>
-        <Li position={"bottom"} animationTime={animationTime} animationDelay={animationDelay}>
+        </RightLi>
+        <BottomLi animation={"moveFromBottom"} animationTime={animationTime} animationDelay={"2.2s"}>
           <Link to="/contact">Contact</Link>
-        </Li>
-        <Li position={"left"} animationTime={animationTime} animationDelay={animationDelay}>
+        </BottomLi>
+        <LeftLi animation={"moveFromLeft"} animationTime={animationTime} animationDelay={"2.3s"}>
           <Link to="/projects">Projects</Link>
-        </Li>
+        </LeftLi>
       </ul>
     </nav>
   )
