@@ -4,14 +4,17 @@ import { TopLi, RightLi, BottomLi, LeftLi, Nav } from "./styled"
 
 import pdf from "../../images/steven.kveton.pdf"
 
+import { LayoutContext } from "../../context"
+
 const Navigation = () => {
   const animationTime = "0.7s"
   const animationDelay = "2s"
 
   // Should listen to global context api for firstLoad property. After first load, animation delays should be set close to or equal to 0
   return (
-    // <LayoutContext.Consumer>
-      <Nav>
+    <LayoutContext.Consumer>
+      {value =>
+        <Nav context={value}>
         <ul>
           <TopLi
             animation={"moveFromTop"}
@@ -45,7 +48,9 @@ const Navigation = () => {
           </LeftLi>
         </ul>
       </Nav>
-    // </LayoutContext.Consumer>
+      }
+      
+    </LayoutContext.Consumer>
   )
 }
 

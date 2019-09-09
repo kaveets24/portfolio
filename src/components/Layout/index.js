@@ -9,16 +9,12 @@ import React, { Component } from "react"
 import PropTypes, { nominalTypeHack } from "prop-types"
 
 import { MainContainer } from "./styled"
-
+import  { LayoutContext } from "../../context"
 
 import "../../css/normalize.scss"
 import "../../css/global.scss"
 import "../../css/typography.scss"
 
-export const LayoutContext = React.createContext({
-  firstLoad: true,
-  imageLoaded: false,
-});
 
 class Layout extends Component {
   state = {
@@ -51,7 +47,6 @@ class Layout extends Component {
 
   componentDidMount() {
     this.handleImageLoad();
-    // window.addEventListener("load", this.handleImageLoad());
     this.setState({
       firstLoad: false,
       
@@ -76,7 +71,7 @@ class Layout extends Component {
         {this.props.children}
       
       </MainContainer>
-      </LayoutContext.Provider>
+       </LayoutContext.Provider>
     )
   }
 }
