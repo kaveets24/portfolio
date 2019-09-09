@@ -2,6 +2,8 @@
 
 $fontBlack: hsl(0, 0%, 10%);
 $backgroundColor: hsl(171, 28%, 50%);
+$secondaryOpacity: hsla(0, 0%, 100%, 0.46);
+
 $fontSmall: 12px;
 $fontMedium: 16px;
 $fontLarge: 20px;
@@ -10,11 +12,15 @@ $fontXXL: 36px;
 
 * {
     color: $fontBlack;
+    margin: 0;
 }
 
 html {
-    background-color: $backgroundColor;
+      overflow-x: hidden;
+      
+
 }
+
 a {
     text-decoration: none;
 }

@@ -25,11 +25,21 @@ export const GreetingContainer = styled.div`
   text-align: center;
   justify-content: center;
   align-items: center;
+  
+  // Mobile and Tablet
+  @media (max-width: ${styleguide.desktopBreakpoint}) {
+    font-size: ${styleguide.fontLarge};
+  }
+
+  // Mobile
+  @media (max-width: ${styleguide.mobileBreakpoint}) {
+    // margin: 0;  
+  }
+
 `
 
 export const FadeInSpan = styled.span`
   opacity: 0;
   animation: ${props => props.animationTime} ${fadeIn} ease-in
-    ${props => props.animationDelay};
-    animation-fill-mode: forwards;
+    ${props => props.animationDelay} forwards;
 `
