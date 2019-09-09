@@ -116,6 +116,7 @@ export const Li = styled.li`
   }
 //  Desktop
   @media (min-width: ${styleguide.desktopBreakpoint}) {
+    /* ${props => props.context.firstLoad ? animation : "" } */
     ${animation}
   }
 `
