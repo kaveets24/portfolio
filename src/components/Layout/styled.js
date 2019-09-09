@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 import { styleguide } from "../../utils"
 
-import img from "../../images/brad-knight-chicago-unsplash.jpg"
+import img from "../../images/brad-knight-chicago-compressed.jpg"
 
 export const MainContainer = styled.main`
   font-family: "DM Sans", sans-serif;
