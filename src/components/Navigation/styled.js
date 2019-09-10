@@ -54,13 +54,17 @@ const animationTypes = {
   `,
 }
 
+const firstVisitPosition = props => css`
+  ${props.firstVisit === "true" ? "-4em" : "4em"}
+`
+
 const animation = props =>
   css`
     animation: ${props.animationTime} ${animationTypes[props.animation]} ease-in
       ${props.animationDelay} forwards;
   `
 
-  export const Nav = styled.nav`
+export const Nav = styled.nav`
   // Mobile and Tablet
   @media (max-width: ${styleguide.desktopBreakpoint}) {
     display: flex;
@@ -74,8 +78,7 @@ const animation = props =>
     width: 100%;
     text-align: center;
   }
-
-  `
+`
 // Main <li> component
 export const Li = styled.li`
   font-size: ${styleguide.fontLarge};
@@ -89,7 +92,7 @@ export const Li = styled.li`
       }
     }
 
-  // Mobile and Tablet
+  /* Mobile and Tablet */
   @media (max-width: ${styleguide.desktopBreakpoint}) {
     position: initial;
     display: inline-block;
@@ -109,45 +112,46 @@ export const Li = styled.li`
       transform: translateY(-3px);
     }
   }
-
-  // Mobile 
+/* Mobile  */
   @media (max-width: ${styleguide.mobileBreakpoint}) {
     display: block;
   }
-//  Desktop
+/* Desktop */
   @media (min-width: ${styleguide.desktopBreakpoint}) {
-    /* ${props => props.context.firstLoad ? animation : "" } */
-    ${animation}
+    ${props => (props.firstVisit === "true" ? animation : "")}
   }
 `
 
 // Top
 export const TopLi = styled(Li)`
-  top: -4em;
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-
-  :hover {
-    color: brown !important;
+  @media (min-width: ${styleguide.desktopBreakpoint}) {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    top: ${firstVisitPosition};
   }
 `
 
 // Right
 export const RightLi = styled(Li)`
-  right: -4em;
-  transform: rotate(90deg);
+  @media (min-width: ${styleguide.desktopBreakpoint}) {
+    right: ${firstVisitPosition};
+    transform: rotate(90deg);
+  }
 `
 // Bottom
 export const LeftLi = styled(Li)`
-  left: -4em;
-  transform: rotate(-90deg);
-
+  @media (min-width: ${styleguide.desktopBreakpoint}) {
+    left: ${firstVisitPosition};
+    transform: rotate(-90deg);
+  }
 `
 // Left
 export const BottomLi = styled(Li)`
-  top: initial;
-  bottom: -4em;
-  text-align: center;
-  width: 100%;
+  @media (min-width: ${styleguide.desktopBreakpoint}) {
+    top: initial;
+    bottom: ${firstVisitPosition};
+    text-align: center;
+    width: 100%;
+  }
 `

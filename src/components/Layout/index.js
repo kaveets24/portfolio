@@ -17,13 +17,28 @@ import "../../css/typography.scss"
 
 
 class Layout extends Component {
-  state = {
-    backgroundSize: "cover",
-    backgroundPositionX: "center",
-    backgroundPositionY: "center",
-    transition: "background-position 3s",
-    firstLoad: true,
-    imageLoaded: false,
+  constructor() { 
+    super();
+
+    this.state = {
+      backgroundSize: "cover",
+      backgroundPositionX: "center",
+      backgroundPositionY: "center",
+      transition: "background-position 3s",
+      firstVisit: this.checkIfFirstVisit(),
+      imageLoaded: false,
+    }
+  }
+
+  checkIfFirstVisit = () => {
+    let firstVisit = window.sessionStorage.getItem("firstVisit");
+    if (firstVisit === null) {
+      window.sessionStorage.setItem("firstVisit", "true");
+    } else {
+      window.sessionStorage.setItem("firstVisit", "false");
+    }
+    firstVisit = window.sessionStorage.getItem("firstVisit");
+    return firstVisit;
   }
 
   handleMouseMove = e => {
@@ -44,13 +59,8 @@ class Layout extends Component {
     })
   }
 
-
   componentDidMount() {
     this.handleImageLoad();
-    this.setState({
-      firstLoad: false,
-      
-    })
   }
 
   render() {

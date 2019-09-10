@@ -4,6 +4,8 @@ import { TopLi, RightLi, BottomLi, LeftLi, Nav } from "./styled"
 
 import pdf from "../../images/steven.kveton.pdf"
 
+import { LayoutContext } from "../../context"
+
 
 const Navigation = () => {
   const animationTime = "0.7s"
@@ -11,10 +13,12 @@ const Navigation = () => {
 
   // Should listen to global context api for firstLoad property. After first load, animation delays should be set close to or equal to 0
   return (
-  
+        <LayoutContext.Consumer>
+          {value =>  
         <Nav>
         <ul>
           <TopLi
+            firstVisit={value.firstVisit}
             animation={"moveFromTop"}
             animationTime={animationTime}
             animationDelay={animationDelay}
@@ -22,6 +26,7 @@ const Navigation = () => {
             <Link to="/aboutme">About Me</Link>
           </TopLi>
           <RightLi
+            firstVisit={value.firstVisit}
             animation={"moveFromRight"}
             animationTime={animationTime}
             animationDelay={"2.1s"}
@@ -31,6 +36,7 @@ const Navigation = () => {
             </a>
           </RightLi>
           <BottomLi
+            firstVisit={value.firstVisit}
             animation={"moveFromBottom"}
             animationTime={animationTime}
             animationDelay={"2.2s"}
@@ -38,6 +44,7 @@ const Navigation = () => {
             <Link to="/contact">Contact</Link>
           </BottomLi>
           <LeftLi
+            firstVisit={value.firstVisit}
             animation={"moveFromLeft"}
             animationTime={animationTime}
             animationDelay={"2.3s"}
@@ -45,7 +52,9 @@ const Navigation = () => {
             <Link to="/projects">Projects</Link>
           </LeftLi>
         </ul>
-      </Nav>
+      </Nav>}
+        </LayoutContext.Consumer>
+       
   )
 }
 
