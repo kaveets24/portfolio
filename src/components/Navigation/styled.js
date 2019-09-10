@@ -74,7 +74,6 @@ export const Nav = styled.nav`
 
   @media (max-width: ${styleguide.mobileBreakpoint}) {
     position: absolute;
-    // top: 40%;
     width: 100%;
     text-align: center;
   }
