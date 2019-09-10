@@ -66,13 +66,13 @@ const animation = props =>
 
 export const Nav = styled.nav`
   // Mobile and Tablet
-  @media (max-width: ${styleguide.desktopBreakpoint}) {
+  @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
     display: flex;
     flex-direction: row-wrap;
     justify-content: center;
   }
 
-  @media (max-width: ${styleguide.mobileBreakpoint}) {
+  @media screen and (max-width: ${styleguide.mobileBreakpoint.max}) {
     position: absolute;
     width: 100%;
     text-align: center;
@@ -92,7 +92,7 @@ export const Li = styled.li`
     }
 
   /* Mobile and Tablet */
-  @media (max-width: ${styleguide.desktopBreakpoint}) {
+  @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
     position: initial;
     display: inline-block;
     top: initial;
@@ -107,23 +107,21 @@ export const Li = styled.li`
     transform: initial;
     transition: transform 0.3s;
 
-    :hover {
-      transform: translateY(-3px);
-    }
+
   }
 /* Mobile  */
-  @media (max-width: ${styleguide.mobileBreakpoint}) {
+  @media screen and (max-width: ${styleguide.mobileBreakpoint.max}) {
     display: block;
   }
 /* Desktop */
-  @media (min-width: ${styleguide.desktopBreakpoint}) {
+  @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     ${props => (props.firstVisit === "true" ? animation : "")}
   }
 `
 
 // Top
 export const TopLi = styled(Li)`
-  @media (min-width: ${styleguide.desktopBreakpoint}) {
+  @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     display: inline-block;
     text-align: center;
     width: 100%;
@@ -133,21 +131,21 @@ export const TopLi = styled(Li)`
 
 // Right
 export const RightLi = styled(Li)`
-  @media (min-width: ${styleguide.desktopBreakpoint}) {
+  @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     right: ${firstVisitPosition};
     transform: rotate(90deg);
   }
 `
 // Bottom
 export const LeftLi = styled(Li)`
-  @media (min-width: ${styleguide.desktopBreakpoint}) {
+    @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     left: ${firstVisitPosition};
     transform: rotate(-90deg);
   }
 `
 // Left
 export const BottomLi = styled(Li)`
-  @media (min-width: ${styleguide.desktopBreakpoint}) {
+  @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     top: initial;
     bottom: ${firstVisitPosition};
     text-align: center;

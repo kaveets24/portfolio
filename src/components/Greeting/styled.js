@@ -27,12 +27,12 @@ export const GreetingContainer = styled.div`
   align-items: center;
   
   // Mobile and Tablet
-  @media (max-width: ${styleguide.desktopBreakpoint}) {
+  @media (max-width: ${styleguide.tabletBreakpoint.max}) {
     font-size: ${styleguide.fontLarge};
   }
 
   // Mobile
-  @media (max-width: ${styleguide.mobileBreakpoint}) {
+  @media (max-width: ${styleguide.mobileBreakpoint.max}) {
     // margin: 0;  
   }
 

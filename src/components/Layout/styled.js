@@ -1,4 +1,4 @@
-import styled, { css }from "styled-components"
+import styled, { css, keyframes }from "styled-components"
 
 import { styleguide } from "../../utils"
 
@@ -11,6 +11,17 @@ const backgroundImagePreview = props => css`
 const backgroundImageLoaded = props => css`
   background-image: url(${img});
 `
+
+const fadeIn = keyframes`
+      from {
+      blur: 8px;
+      }
+      to {
+        blur: 0px;
+      }
+`
+
+
 export const MainContainer = styled.main`
   font-family: "DM Sans", sans-serif;
   color: ${styleguide.fontBlack};
@@ -22,6 +33,7 @@ export const MainContainer = styled.main`
   background-size: cover;
   background-blend-mode: soft-light;
   background-color: ${styleguide.backgroundColor};
+  animation: ${fadeIn} 3s both;
  
 
 `

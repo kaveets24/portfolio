@@ -9,32 +9,33 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 
 import { MainContainer } from "./styled"
-import  { LayoutContext } from "../../context"
+import { LayoutContext } from "../../context"
 
 import "../../css/normalize.scss"
 import "../../css/global.scss"
 import "../../css/typography.scss"
-
+import img from "../../images/brad-knight-chicago-compressed.jpg"
+import { styleguide } from "../../utils"
 
 class Layout extends Component {
   state = {
-        backgroundSize: "cover",
-        backgroundPositionX: "center",
-        backgroundPositionY: "center",
-        transition: "background-position 3s",
-        firstVisit: null,
-        imageLoaded: false,
-      }
+    backgroundSize: "cover",
+    backgroundPositionX: "center",
+    backgroundPositionY: "center",
+    transition: "background-position 3s",
+    firstVisit: null,
+    imageLoaded: false,
+  }
 
   checkIfFirstVisit = () => {
-    let firstVisit = window.sessionStorage.getItem("firstVisit");
+    let firstVisit = window.sessionStorage.getItem("firstVisit")
     if (firstVisit === null) {
-      window.sessionStorage.setItem("firstVisit", "true");
+      window.sessionStorage.setItem("firstVisit", "true")
     } else {
-      window.sessionStorage.setItem("firstVisit", "false");
+      window.sessionStorage.setItem("firstVisit", "false")
     }
-    firstVisit = window.sessionStorage.getItem("firstVisit");
-    return firstVisit;
+    firstVisit = window.sessionStorage.getItem("firstVisit")
+    return firstVisit
   }
 
   handleMouseMove = e => {
@@ -51,37 +52,48 @@ class Layout extends Component {
   handleImageLoad = () => {
     console.log("image loaded")
     this.setState({
-      imageLoaded: true
+      imageLoaded: true,
     })
   }
 
   componentDidMount() {
-    this.handleImageLoad();
+
+    window.onload = this.handleImageLoad();
     this.setState({
-      firstVisit: this.checkIfFirstVisit()
+      firstVisit: this.checkIfFirstVisit(),
     })
-    
   }
 
   render() {
     return (
       <LayoutContext.Provider value={this.state}>
-      <MainContainer imageLoaded={this.state.imageLoaded}
-     
-        style={
-          {
-            // backgroundPositionX: this.state.backgroundPositionX,
-            // backgroundPositionY: this.state.backgroundPositionY,
-            // transition: this.state.transition
+        <MainContainer
+          imageLoaded={this.state.imageLoaded}
+          style={
+            {
+              // backgroundPositionX: this.state.backgroundPositionX,
+              // backgroundPositionY: this.state.backgroundPositionY,
+              // transition: this.state.transition
+            }
           }
-        }
-        onMouseMove={this.handleMouseMove}
-      >
-        {/* <img src={img} style={{visibility, backgroundImage: `url(${img})`, height: '100%', width: '100%' }} onLoad={this.handleImageLoad}></img> */}
-        {this.props.children}
-      
-      </MainContainer>
-       </LayoutContext.Provider>
+          onMouseMove={this.handleMouseMove}
+        >
+          {/* <img
+            src={img}
+            alt="background"
+            style={{
+              position: "absolute",
+              zIndex: "-1",
+              height: "100%",
+              width: "100%",
+              visibility: "hidden",
+            }}
+            
+            onLoad={this.handleImageLoad}
+          ></img> */}
+          {this.props.children}
+        </MainContainer>
+      </LayoutContext.Provider>
     )
   }
 }
