@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import styled, { css }from "styled-components";
 
 export const ContactContainer = styled.div`
     max-width: 300px;
     margin: 0 auto;
     padding: 50px 0;
+    
 `;
 
 

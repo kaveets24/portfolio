@@ -1,9 +1,9 @@
 import React from "react"
 import Layout from "../components/Layout";
-
+import { Animated } from "react-animated-css"
 const AboutMePage = () => (
   <Layout>
-    About Me
+    <Animated animationIn="fadeInDownBig" isVisible={true}>About Me</Animated>
   </Layout>
 )
 

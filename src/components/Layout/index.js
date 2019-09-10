@@ -10,6 +10,8 @@ import PropTypes from "prop-types"
 
 import { MainContainer } from "./styled"
 import { LayoutContext } from "../../context"
+import  Navigation  from "../Navigation"
+import  Greeting  from "../Greeting"
 
 import "../../css/normalize.scss"
 import "../../css/global.scss"
@@ -18,14 +20,19 @@ import img from "../../images/brad-knight-chicago-compressed.jpg"
 import { styleguide } from "../../utils"
 
 class Layout extends Component {
-  state = {
-    backgroundSize: "cover",
-    backgroundPositionX: "center",
-    backgroundPositionY: "center",
-    transition: "background-position 3s",
-    firstVisit: null,
-    imageLoaded: false,
+  constructor(props) {
+    super(props);
+    this.state = {
+      backgroundSize: "cover",
+      backgroundPositionX: "center",
+      backgroundPositionY: "center",
+      transition: "background-position 3s",
+      firstVisit: null,
+      imageLoaded: false,
+      page: "home"
+    }
   }
+
 
   checkIfFirstVisit = () => {
     let firstVisit = window.sessionStorage.getItem("firstVisit")
@@ -56,11 +63,19 @@ class Layout extends Component {
     })
   }
 
+  onNavClick = () => {
+    console.log("onNavClick")
+    // this.setState({
+    //   page: 
+    // })
+  }
+
   componentDidMount() {
 
     window.onload = this.handleImageLoad();
     this.setState({
       firstVisit: this.checkIfFirstVisit(),
+      page: window.location.pathname
     })
   }
 
@@ -78,19 +93,7 @@ class Layout extends Component {
           }
           onMouseMove={this.handleMouseMove}
         >
-          {/* <img
-            src={img}
-            alt="background"
-            style={{
-              position: "absolute",
-              zIndex: "-1",
-              height: "100%",
-              width: "100%",
-              visibility: "hidden",
-            }}
-            
-            onLoad={this.handleImageLoad}
-          ></img> */}
+          <Navigation firstVisit={this.state.firstVisit} onNavClick={this.onNavClick} />
           {this.props.children}
         </MainContainer>
       </LayoutContext.Provider>

@@ -11,16 +11,7 @@ const backgroundImagePreview = props => css`
 const backgroundImageLoaded = props => css`
   background-image: url(${img});
 `
-
-const fadeIn = keyframes`
-      from {
-      blur: 8px;
-      }
-      to {
-        blur: 0px;
-      }
-`
-
+  
 
 export const MainContainer = styled.main`
   font-family: "DM Sans", sans-serif;
@@ -33,7 +24,6 @@ export const MainContainer = styled.main`
   background-size: cover;
   background-blend-mode: soft-light;
   background-color: ${styleguide.backgroundColor};
-  animation: ${fadeIn} 3s both;
  
 
 `
