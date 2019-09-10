@@ -6,7 +6,7 @@
  */
 
 import React, { Component } from "react"
-import PropTypes, { nominalTypeHack } from "prop-types"
+import PropTypes from "prop-types"
 
 import { MainContainer } from "./styled"
 import  { LayoutContext } from "../../context"
@@ -17,18 +17,14 @@ import "../../css/typography.scss"
 
 
 class Layout extends Component {
-  constructor() { 
-    super();
-
-    this.state = {
-      backgroundSize: "cover",
-      backgroundPositionX: "center",
-      backgroundPositionY: "center",
-      transition: "background-position 3s",
-      firstVisit: null,
-      imageLoaded: false,
-    }
-  }
+  state = {
+        backgroundSize: "cover",
+        backgroundPositionX: "center",
+        backgroundPositionY: "center",
+        transition: "background-position 3s",
+        firstVisit: null,
+        imageLoaded: false,
+      }
 
   checkIfFirstVisit = () => {
     let firstVisit = window.sessionStorage.getItem("firstVisit");
