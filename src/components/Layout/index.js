@@ -25,7 +25,7 @@ class Layout extends Component {
       backgroundPositionX: "center",
       backgroundPositionY: "center",
       transition: "background-position 3s",
-      firstVisit: this.checkIfFirstVisit(),
+      firstVisit: null,
       imageLoaded: false,
     }
   }
@@ -61,6 +61,10 @@ class Layout extends Component {
 
   componentDidMount() {
     this.handleImageLoad();
+    this.setState({
+      firstVisit: this.checkIfFirstVisit()
+    })
+    
   }
 
   render() {
