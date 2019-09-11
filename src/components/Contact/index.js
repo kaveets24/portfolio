@@ -13,22 +13,23 @@ import { Animated } from "react-animated-css"
 const Contact = props => {
   return (
     <div>
-        <ContactContainer className="fadeInUpBig" path={props.path}>
+        <ContactContainer path={props.path}>
           <form action="https://formspree.io/kaveets24@gmail.com" method="POST">
-            <ContactLabel for="Name">Name</ContactLabel>
+            <ContactLabel htmlFor="Name">Name</ContactLabel>
             <ContactInput type="text" placeholder="Full Name" name="Name" />
-            <ContactLabel for="Email">Email</ContactLabel>
+            <ContactLabel htmlFor="Email">Email</ContactLabel>
             <ContactInput
               type="text"
               placeholder="pete@example.com"
               name="Email"
             />
-            <ContactLabel for="Phone">Phone</ContactLabel>
+            <ContactLabel htmlFor="Phone">Phone</ContactLabel>
             <ContactInput
               type="text"
               placeholder="(123) 867-5309"
               name="Phone"
             />
+            <ContactLabel htmlFor="Message">Message</ContactLabel>
             <ContactTextArea
               name="Message"
               placeholder="Write your message here."

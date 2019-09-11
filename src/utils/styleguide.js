@@ -7,6 +7,7 @@ export const styleguide = {
     fontLarge: "20px",
     fontXL: "24px",
     fontXXL: "36px",
+    formPadding: "10px",
     textShadow: "0 2px 15px hsla(0, 0%, 0%, 0.2)",
     mobileBreakpoint: {min: "320px", max: "767px"},
     tabletBreakpoint: {min: "768px", max: "1023px"},
