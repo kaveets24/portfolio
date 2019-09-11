@@ -22,7 +22,7 @@ const ProjectsPage = () => (
       </div>
       <div>
         If you have a Spotify Premium account, checkout the live version at{" "}
-        <a href="hmnymusic.com">hmnymusic.com</a>
+        <a href="https://www.hmnymusic.com" target="__blank">hmnymusic.com</a>
       </div>
       <div>Otherwise, checkout the video demo below:</div>
     </Animated>

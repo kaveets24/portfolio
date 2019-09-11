@@ -18,11 +18,11 @@ export const MainContainer = styled.main`
   color: ${styleguide.fontBlack};
   height: 100vh;
   /* After large Image Loads */
-  /* background: no-repeat center center fixed; */
+  background: no-repeat top center fixed;
    /* background-image */
-  /* ${props => props.imageLoaded ? backgroundImageLoaded : backgroundImagePreview} */
-  /* background-size: cover; */
-  /* background-blend-mode: soft-light; */
+  ${props => props.imageLoaded ? backgroundImageLoaded : backgroundImagePreview}
+  background-size: 150%;
+  background-blend-mode: soft-light;
   background-color: ${styleguide.backgroundColor};
  
 
