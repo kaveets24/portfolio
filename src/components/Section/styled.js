@@ -13,17 +13,12 @@ export const SectionContainer = styled.section`
     }
 
     a {
-        /* border-bottom: 2px solid ${styleguide.fontBlack}; */
         display: inline-block;
         line-height: 0.9;
         border-bottom: 2px solid ${styleguide.fontBlack};
     }
 
     h2 {
-    @font-face {
-        font-family: "DM Sans-Bold" ;
-        src: url(${fontBold});
-    }
     font-family: "DM Sans-Bold", sans-serif;
     margin: 20px 0
 }

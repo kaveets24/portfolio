@@ -24,6 +24,10 @@ export const MainContainer = styled.main`
       font-family: "DM Sans";
       src: url(${fontReg});
   }
+  @font-face {
+        font-family: "DM Sans-Bold" ;
+        src: url(${fontBold});
+    }
   font-family: "DM Sans", sans-serif;
   position: relative;  
   font-size: ${styleguide.fontXL};
