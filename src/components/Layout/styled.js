@@ -15,7 +15,7 @@ const backgroundImageLoaded = props => css`
 /* Show background with opacity 50 only on home page */
   background-image: url(${props.page === "/" ? img50: img10});
 `
-  
+
 
 export const MainContainer = styled.main`
   position: relative;
@@ -29,6 +29,7 @@ export const MainContainer = styled.main`
   background-size: cover;
   ${props => props.imageLoaded ? backgroundImageLoaded : backgroundImagePreview}
   background-blend-mode: soft-light;
+
  
 
 

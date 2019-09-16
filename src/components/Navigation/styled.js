@@ -88,6 +88,7 @@ export const Li = styled.li`
 
     a:hover {
         color: ${styleguide.secondaryOpacity}; 
+        
         .back {
         stroke: ${styleguide.secondaryOpacity}; 
       }
