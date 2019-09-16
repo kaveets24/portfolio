@@ -18,7 +18,9 @@ const backgroundImageLoaded = props => css`
   
 
 export const MainContainer = styled.main`
+  position: relative;
   font-family: "DM Sans", sans-serif;
+  font-size: ${styleguide.fontXL};
   color: ${styleguide.fontBlack};
   height: 100vh;
   /* After large Image Loads */

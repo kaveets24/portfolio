@@ -63,13 +63,6 @@ class Layout extends Component {
     })
   }
 
-  onNavClick = () => {
-    console.log("onNavClick")
-    // this.setState({
-    //   page: 
-    // })
-  }
-
   componentDidMount() {
 
     window.onload = this.handleImageLoad();
@@ -83,7 +76,7 @@ class Layout extends Component {
     return (
       <LayoutContext.Provider value={this.state}>
         <MainContainer
-        page={this.state.page}
+          page={this.state.page}
           imageLoaded={this.state.imageLoaded}
           style={
             {
@@ -94,9 +87,8 @@ class Layout extends Component {
           }
           onMouseMove={this.handleMouseMove}
         >
-          <Navigation firstVisit={this.state.firstVisit} onNavClick={this.onNavClick} />
+          <Navigation firstVisit={this.state.firstVisit} page={this.state.page}/>
           {this.props.children}
-          {/* <img className="background background--large"src={imgLarge} onLoad={() => {this.handleImageLoad()}}></img> */}
         </MainContainer>
       </LayoutContext.Provider>
     )

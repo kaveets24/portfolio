@@ -5,7 +5,7 @@ export const styleguide = {
     fontSmall: "12px",
     fontMedium: "16px",
     fontLarge: "20px",
-    fontXL: "24px",
+    fontXL: "28px",
     fontXXL: "36px",
     formPadding: "10px",
     textShadow: "0 2px 15px hsla(0, 0%, 0%, 0.2)",

@@ -65,7 +65,7 @@ const animation = props =>
   `
 
 export const Nav = styled.nav`
-  // Mobile and Tablet
+  /* Mobile and Tablet */
   @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
     display: flex;
     flex-direction: row-wrap;
@@ -85,11 +85,16 @@ export const Li = styled.li`
   top: 50%;
   z-index: 1;
 
+
     a:hover {
         color: ${styleguide.secondaryOpacity}; 
+        .back {
+        stroke: ${styleguide.secondaryOpacity}; 
+      }
   
       }
-    }
+   
+    
 
   /* Mobile and Tablet */
   @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
@@ -122,8 +127,10 @@ export const Li = styled.li`
 
 // Top
 export const TopLi = styled(Li)`
+  ${props => console.log(props.page)}
+  display: ${props =>
+    props.page === "/" || props.page === "/aboutme" ? "inline-block" : "none"}; 
   @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
-    display: inline-block;
     text-align: center;
     width: 100%;
     top: ${firstVisitPosition};
@@ -132,24 +139,33 @@ export const TopLi = styled(Li)`
 
 // Right
 export const RightLi = styled(Li)`
+  display: ${props =>
+    props.page === "/" || props.page === "/resume" ? "initial" : "none"};
   @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     right: ${firstVisitPosition};
     transform: rotate(90deg);
   }
 `
 // Bottom
-export const LeftLi = styled(Li)`
-    @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
-    left: ${firstVisitPosition};
-    transform: rotate(-90deg);
-  }
-`
-// Left
+
 export const BottomLi = styled(Li)`
+  display: ${props =>
+    props.page === "/" || props.page === "/contact" ? "initial" : "none"};
+
   @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     top: initial;
     bottom: ${firstVisitPosition};
     text-align: center;
     width: 100%;
+  }
+`
+
+export const LeftLi = styled(Li)`
+  display: ${props =>
+    props.page === "/" || props.page === "/projects" ? "initial" : "none"};
+
+  @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
+    left: ${firstVisitPosition};
+    transform: rotate(-90deg);
   }
 `
