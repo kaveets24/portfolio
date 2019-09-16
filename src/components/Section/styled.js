@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { styleguide } from "../../utils"
-import fontBold from "../../fonts/DMSans-Bold.ttf";
 
 
 export const SectionContainer = styled.section`

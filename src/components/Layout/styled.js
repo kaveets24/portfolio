@@ -6,7 +6,10 @@ import { styleguide } from "../../utils"
 import img50 from "../../images/brad-knight-chicago-unsplash-50.png"
 import img10 from "../../images/brad-knight-chicago-unsplash-10.png"
 
+// Fonts
 import fontReg from "../../fonts/DMSans-Regular.ttf"
+import fontBold from "../../fonts/DMSans-Bold.ttf";
+
 
 
 const backgroundImagePreview = props => css`
