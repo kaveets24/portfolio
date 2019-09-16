@@ -130,7 +130,7 @@ export const Li = styled.li`
 export const TopLi = styled(Li)`
   ${props => console.log(props.page)}
   display: ${props =>
-    props.page === "/" || props.page === "/aboutme" ? "inline-block" : "none"}; 
+    props.page === "/" || props.page.includes("aboutme") ? "inline-block" : "none"}; 
   @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     text-align: center;
     width: 100%;
@@ -141,7 +141,7 @@ export const TopLi = styled(Li)`
 // Right
 export const RightLi = styled(Li)`
   display: ${props =>
-    props.page === "/" || props.page === "/resume" ? "initial" : "none"};
+    props.page === "/" || props.page.includes("resume") ? "initial" : "none"};
   @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     right: ${firstVisitPosition};
     transform: rotate(90deg);
@@ -151,7 +151,7 @@ export const RightLi = styled(Li)`
 
 export const BottomLi = styled(Li)`
   display: ${props =>
-    props.page === "/" || props.page === "/contact" ? "initial" : "none"};
+    props.page === "/" || props.page.includes("contact") ? "initial" : "none"};
 
   @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     top: initial;
@@ -163,7 +163,8 @@ export const BottomLi = styled(Li)`
 
 export const LeftLi = styled(Li)`
   display: ${props =>
-    props.page === "/" || props.page === "/projects" ? "initial" : "none"};
+    props.page === "/" || props.page.includes("projects") ? "initial" : "none"};
+    ${props => console.log(props.page)}
 
   @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     left: ${firstVisitPosition};
