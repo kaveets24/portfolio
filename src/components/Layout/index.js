@@ -16,8 +16,8 @@ import  Greeting  from "../Greeting"
 import "../../css/normalize.scss"
 import "../../css/global.scss"
 import "../../css/typography.scss"
-import img from "../../images/brad-knight-chicago-compressed.jpg"
 import { styleguide } from "../../utils"
+// import imgLarge from "../../images/brad-knight-chicago-unsplash-10.png";
 
 class Layout extends Component {
   constructor(props) {
@@ -83,6 +83,7 @@ class Layout extends Component {
     return (
       <LayoutContext.Provider value={this.state}>
         <MainContainer
+        page={this.state.page}
           imageLoaded={this.state.imageLoaded}
           style={
             {
@@ -95,6 +96,7 @@ class Layout extends Component {
         >
           <Navigation firstVisit={this.state.firstVisit} onNavClick={this.onNavClick} />
           {this.props.children}
+          {/* <img className="background background--large"src={imgLarge} onLoad={() => {this.handleImageLoad()}}></img> */}
         </MainContainer>
       </LayoutContext.Provider>
     )
