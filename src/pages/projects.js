@@ -21,7 +21,7 @@ const ProjectsPage = () => (
           </a>
         </p>
         <p>
-          If you have a Spotify Premium account, checkout the live version at{" "}
+          If you have a Spotify Premium account, check out the live version at{" "}
           <a href="https://www.hmnymusic.com" target="__blank">
             hmnymusic.com
           </a>
