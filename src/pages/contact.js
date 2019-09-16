@@ -11,6 +11,7 @@ const ContactPage = props => {
     <Layout>
       <Animated animationIn="fadeInUpBig" isVisible={true}>
         <Section>
+          <h2>Contact</h2>
           <Contact path={props.path} />
         </Section>
       </Animated>

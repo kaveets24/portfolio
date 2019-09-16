@@ -1,39 +1,55 @@
-import styled, { css }from "styled-components";
+import styled, { css } from "styled-components"
 import { styleguide } from "../../utils"
 
+const border = props => css`
+  border: 2px solid ${styleguide.fontBlack};
+`
+
 export const ContactContainer = styled.div`
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 50px 0;
-    top: 50%;
-    
-`;
+  form {
+    color: ${styleguide.fontBlack};
+  }
+  input {
+    ${border}
+    width: 100%;
+    height: 64px;
+    padding: ${styleguide.formPadding};
+    margin: 20px 0 0 0;
+    background-color: ${styleguide.backgroundColor};
+    ::placeholder {
+      color: ${styleguide.fontBlack};
+    }
 
+    :focus {
+        outline: none
+    }
+  }
 
-export const ContactInput = styled.input`
-/* display: block; */
-width: 100%;
-padding: ${styleguide.formPadding};
+  label {
+  }
 
+  textarea {
+    ${border}
+    color: ${styleguide.fontBlack};
+    width: 100%;
+    padding: ${styleguide.formPadding};
+    background-color: ${styleguide.backgroundColor};
+    margin: 20px 0 0 0;
 
-`;
-
-export const ContactLabel = styled.label`
-/* display: block; */
-
-
-`;
-
-export const ContactTextArea = styled.textarea`
-/* display: block; */
-width: 100%;
-padding: ${styleguide.formPadding};
-
-
-
-`;
+    ::placeholder {
+      color: ${styleguide.fontBlack};
+    }
+    :focus {
+        outline: none
+    }
+  }
+`
 
 export const ContactButton = styled.button`
-margin: 0 auto;
-width: 100px;
-`;
+  padding: ${styleguide.formPadding};
+  margin: 20px auto;
+  background-color: ${styleguide.backgroundColor};
+  width: 125px;
+  ${border}
+
+`
