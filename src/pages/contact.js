@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Contact from "../components/Contact"
+import Section from "../components/Section"
 import { LayoutContext } from "../context"
 import { Animated } from "react-animated-css"
 
@@ -9,8 +10,9 @@ const ContactPage = props => {
   return (
     <Layout>
       <Animated animationIn="fadeInUpBig" isVisible={true}>
-        Contact
-        <Contact path={props.path} />
+        <Section>
+          <Contact path={props.path} />
+        </Section>
       </Animated>
     </Layout>
   )

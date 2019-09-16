@@ -15,21 +15,15 @@ const Contact = props => {
     <div>
         <ContactContainer path={props.path}>
           <form action="https://formspree.io/kaveets24@gmail.com" method="POST">
-            <ContactLabel htmlFor="Name">Name</ContactLabel>
+            <ContactLabel htmlFor="Name"></ContactLabel>
             <ContactInput type="text" placeholder="Full Name" name="Name" />
-            <ContactLabel htmlFor="Email">Email</ContactLabel>
+            <ContactLabel htmlFor="Email"></ContactLabel>
             <ContactInput
               type="text"
               placeholder="pete@example.com"
               name="Email"
             />
-            <ContactLabel htmlFor="Phone">Phone</ContactLabel>
-            <ContactInput
-              type="text"
-              placeholder="(123) 867-5309"
-              name="Phone"
-            />
-            <ContactLabel htmlFor="Message">Message</ContactLabel>
+            <ContactLabel htmlFor="Message"></ContactLabel>
             <ContactTextArea
               name="Message"
               placeholder="Write your message here."
