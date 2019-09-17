@@ -5,7 +5,7 @@ import { styleguide } from "../../utils"
 export const SectionContainer = styled.section`
     max-width: 1024px;  
     margin: 0 auto;
-    padding: 205px 0 0 0;
+    padding: 205px 20px 0 20px;
     p {
         margin: 20px 0;
         line-height: 40px;

@@ -46,7 +46,6 @@ export const MainContainer = styled.main`
   font-size: ${styleguide.fontXL};
   color: ${styleguide.fontBlack};
   height: 100%;
-  padding: 0 20px;
   background: no-repeat center center fixed;
   background-color: ${styleguide.backgroundColor};
   background-size: cover;
