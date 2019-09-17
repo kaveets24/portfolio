@@ -19,11 +19,9 @@ html, body {
   
   height: 100%;
   -webkit-overflow-scrolling: touch;
+  :-webkit-scrollbar { width: 0 !important }
   overflow-y: auto;
   overflow-x: hidden;
-  @media screen and (max-width: 400px) {
-    overflow-y: scroll;
-  }
   
 }
 

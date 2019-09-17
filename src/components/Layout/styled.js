@@ -53,6 +53,7 @@ export const MainContainer = styled.main`
   background-blend-mode: soft-light;
   animation: ${fadeIn} 1.5s;
 
+
  
 
 

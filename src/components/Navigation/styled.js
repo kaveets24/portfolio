@@ -15,48 +15,44 @@ const animationTypes = {
     `,
   moveFromTop: keyframes`
   0% {
-    transform: translateY(0);
+    transform: translateY(-8em);
     
   }
   100% {
-    transform: translateY(8em);
+    transform: translateY(0em);
   
   }
   `,
   moveFromRight: keyframes`
   0% {
-    transform: translateX(0) rotate(90deg);
+    transform: translateX(8em) rotate(90deg);
     
   }
   100% {
-    transform: translateX(-8em) rotate(90deg);
+    transform: translateX(0) rotate(90deg);
   
   }`,
 
   moveFromBottom: keyframes`
   0% {
-    transform: translateY(0);
+    transform: translateY(8em);
     
   }
   100% {
-    transform: translateY(-8em);
+    transform: translateY(0);
   
   }`,
 
   moveFromLeft: keyframes`
     0% {
-      transform: translateX(0) rotate(-90deg);
+      transform: translateX(-8em) rotate(-90deg);
     }
 
     100% {
-      transform: translateX(8em) rotate(-90deg);
+      transform: translateX(0) rotate(-90deg);
     }
   `,
 }
-
-const firstVisitPosition = props => css`
-  ${props.firstVisit === "true" ? "-4em" : "4em"}
-`
 
 const animation = props =>
   css`
@@ -100,14 +96,14 @@ export const TopLi = styled(Li)`
     props.page === "/" || props.page.includes("about") ? "inline-block" : "none"}; 
     text-align: center;
     width: 100%;
-    top: ${firstVisitPosition};
+    top: 4em;
 `
 
 // Right
 export const RightLi = styled(Li)`
   display: ${props =>
     props.page === "/" || props.page.includes("resume") ? "initial" : "none"};
-    right: ${firstVisitPosition};
+    right: 4em;
     transform: rotate(90deg);
 
 `
@@ -117,7 +113,7 @@ export const BottomLi = styled(Li)`
   display: ${props =>
     props.page === "/" || props.page.includes("contact") ? "initial" : "none"};
     top: initial;
-    bottom: ${firstVisitPosition};
+    bottom: 4em;
     text-align: center;
     width: 100%;
 `
@@ -126,6 +122,6 @@ export const LeftLi = styled(Li)`
   display: ${props =>
     props.page === "/" || props.page.includes("projects") ? "initial" : "none"};
     ${props => console.log(props.page)}
-    left: ${firstVisitPosition};
+    left: 4em;
     transform: rotate(-90deg);
 `

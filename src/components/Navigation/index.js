@@ -11,7 +11,7 @@ import { LayoutContext } from "../../context"
 
 const Navigation = (props) => {
   const animationTime = "0.7s"
-  const animationDelay = "2s"
+  const animationDelay = "0s"
 
   // Should listen to global context api for firstLoad property. After first load, animation delays should be set close to or equal to 0
   let backButton = props.page === "/" ? false : <Link to={"/"}><svg className="back" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@ const Navigation = (props) => {
             page={props.page}
             animation={"moveFromRight"}
             animationTime={animationTime}
-            animationDelay={"2.1s"}
+            animationDelay={animationDelay}
           >
             {backButton || <a href={pdf} target="__blank">
               Resume
@@ -49,7 +49,7 @@ const Navigation = (props) => {
             page={props.page}
             animation={"moveFromBottom"}
             animationTime={animationTime}
-            animationDelay={"2.2s"}
+            animationDelay={animationDelay}
           >
             {backButton || <Link to="/contact">Contact</Link>}
           </BottomLi>
@@ -58,7 +58,7 @@ const Navigation = (props) => {
             page={props.page}
             animation={"moveFromLeft"}
             animationTime={animationTime}
-            animationDelay={"2.3s"}
+            animationDelay={animationDelay}
           >
             {backButton || <Link to={"/projects"}>Projects</Link>}
           </LeftLi>
