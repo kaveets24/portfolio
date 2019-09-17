@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components"
+import styled, { keyframes, css } from "styled-components"
 import { styleguide } from "../../utils"
 
 const fadeIn = keyframes`
@@ -37,9 +37,10 @@ export const GreetingContainer = styled.div`
   }
 
 `
-
+const animation = props => css`
+  animation: ${props.animationTime} ${fadeIn} ease-in ${props.animationDelay} forwards;
+`
 export const FadeInSpan = styled.span`
   opacity: 0;
-  animation: ${props => props.animationTime} ${fadeIn} ease-in
-    ${props => props.animationDelay} forwards;
+  ${props => props.firstVisit === "true" ? animation : "opacity: 1"}
 `
