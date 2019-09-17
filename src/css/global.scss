@@ -16,10 +16,10 @@ $fontXXL: 36px;
     box-sizing: border-box;
 }
 html, body {
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: 100%;
-    
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  
 }
 
 a {
@@ -50,6 +50,7 @@ ul {
 
  body, html, #___gatsby {
   height: 100%;
+  background-color: $backgroundColor;
 }
 
 body {

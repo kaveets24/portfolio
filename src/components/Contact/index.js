@@ -12,7 +12,7 @@ const Contact = props => {
         <ContactContainer path={props.path}>
           <form action="https://formspree.io/kaveets24@gmail.com" method="POST">
             <label htmlFor="Name"></label>
-            <input required type="text" placeholder="Full Name" name="Name" />
+            <input required type="text" placeholder="Name" name="Name" />
             <label htmlFor="Email"></label>
             <input
               required
