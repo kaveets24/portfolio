@@ -3,12 +3,10 @@ import React from "react"
 
 import Layout from "../components/Layout/"
 import Section from "../components/Section"
-import { Animated } from "react-animated-css"
 
 const ProjectsPage = () => (
   <Layout>
-    <Animated animationIn="fadeInLeftBig" isVisible={true}>
-    <Section>
+    <Section animation={"fadeInLeft"}>
         <h2>Hmny</h2>
         <p>
           Hmny (härmənē) is a music streaming application that lets users build
@@ -29,7 +27,6 @@ const ProjectsPage = () => (
         <p>Otherwise, checkout the video demo below:</p>
       
         </Section>
-        </Animated>
   </Layout>
 )
 

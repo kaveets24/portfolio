@@ -1,11 +1,9 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Section from "../components/Section"
-import { Animated } from "react-animated-css"
 const AboutMePage = () => (
   <Layout>
-    <Animated animationIn="fadeInDownBig" isVisible={true}>
-      <Section>
+      <Section animation={"fadeInDown"}>
         <h2>About Me</h2>
         <p>
           Currently, I work over at{" "}
@@ -37,7 +35,6 @@ const AboutMePage = () => (
           concept to front-end development technologies.
         </p>
       </Section>
-    </Animated>
   </Layout>
 )
 

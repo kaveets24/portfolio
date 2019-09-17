@@ -4,7 +4,7 @@ import { SectionContainer } from "./styled"
 const Section = props => {
   return (
     
-      <SectionContainer>
+      <SectionContainer animation={props.animation}>
         {props.children}
       </SectionContainer>
     

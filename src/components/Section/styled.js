@@ -1,11 +1,61 @@
-import styled from "styled-components"
+import styled, {css, keyframes} from "styled-components"
 import { styleguide } from "../../utils"
 
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translate(0, 2000px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+`
+
+const fadeInDown = keyframes`
+  from {
+    opacity: 0;
+    transform: translate(0, -2000px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+`
+
+const fadeInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translate(-2000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+`
+
+const fadeInRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translate(2000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+`
 
 export const SectionContainer = styled.section`
     max-width: 1024px;  
     margin: 0 auto;
     padding: 205px 20px 0 20px;
+    animation: ${props => props.animation} 1s;
+
     p {
         margin: 20px 0;
         line-height: 40px;
