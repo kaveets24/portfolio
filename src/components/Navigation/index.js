@@ -31,7 +31,7 @@ const Navigation = (props) => {
             animationTime={animationTime}
             animationDelay={animationDelay}
           >
-           {backButton || <Link onClick={props.onNavClick} to="/aboutme">About Me</Link> } 
+           {backButton || <Link onClick={props.onNavClick} to="/about">About Me</Link> } 
           </TopLi>
           <RightLi
             firstVisit={props.firstVisit}

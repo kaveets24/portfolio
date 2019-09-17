@@ -65,24 +65,13 @@ const animation = props =>
   `
 
 export const Nav = styled.nav`
-  /* Mobile and Tablet */
-  @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
-    display: flex;
-    flex-direction: row-wrap;
-    justify-content: center;
-  }
 
-  @media screen and (max-width: ${styleguide.mobileBreakpoint.max}) {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-  }
 `
 // Main <li> component
 export const Li = styled.li`
   font-size: ${styleguide.fontLarge};
   position: absolute;
-  top: 50%;
+  top: 50vh;
   z-index: 1;
 
 
@@ -94,32 +83,8 @@ export const Li = styled.li`
       }
   
       }
-   
-    
+     }
 
-  /* Mobile and Tablet */
-  @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
-    position: initial;
-    display: inline-block;
-    top: initial;
-    right: initial;
-    bottom: initial;
-    left: initial;
-    
-    text-align: center;
-    width: initial;
-    font-size: ${styleguide.fontMedium};
-    padding: 1em 0.8em 0;
-    transform: initial;
-    transition: transform 0.3s;
-
-
-
-  }
-/* Mobile  */
-  @media screen and (max-width: ${styleguide.mobileBreakpoint.max}) {
-    display: block;
-  }
 /* Desktop */
   @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     ${props => (props.firstVisit === "true" ? animation : "")}
@@ -128,46 +93,36 @@ export const Li = styled.li`
 
 // Top
 export const TopLi = styled(Li)`
-  ${props => console.log(props.page)}
   display: ${props =>
-    props.page === "/" || props.page.includes("aboutme") ? "inline-block" : "none"}; 
-  @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
+    props.page === "/" || props.page.includes("about") ? "inline-block" : "none"}; 
     text-align: center;
     width: 100%;
     top: ${firstVisitPosition};
-  }
 `
 
 // Right
 export const RightLi = styled(Li)`
   display: ${props =>
     props.page === "/" || props.page.includes("resume") ? "initial" : "none"};
-  @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     right: ${firstVisitPosition};
     transform: rotate(90deg);
-  }
+
 `
 // Bottom
 
 export const BottomLi = styled(Li)`
   display: ${props =>
     props.page === "/" || props.page.includes("contact") ? "initial" : "none"};
-
-  @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     top: initial;
     bottom: ${firstVisitPosition};
     text-align: center;
     width: 100%;
-  }
 `
 
 export const LeftLi = styled(Li)`
   display: ${props =>
     props.page === "/" || props.page.includes("projects") ? "initial" : "none"};
     ${props => console.log(props.page)}
-
-  @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     left: ${firstVisitPosition};
     transform: rotate(-90deg);
-  }
 `

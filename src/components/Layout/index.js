@@ -13,8 +13,6 @@ import { LayoutContext } from "../../context"
 import  Navigation  from "../Navigation"
 import  Greeting  from "../Greeting"
 
-import "../../css/normalize.scss"
-import "../../css/global.scss"
 import { styleguide } from "../../utils"
 // import imgLarge from "../../images/brad-knight-chicago-unsplash-10.png";
 

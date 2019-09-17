@@ -1,7 +1,7 @@
 // Global Styleguide
 
 $fontBlack: hsl(0, 0%, 10%);
-$backgroundColor: rgba(91, 163, 152, 0.5);
+$backgroundColor: rgba(91, 163, 152, 1);
 $secondaryOpacity: hsla(0, 0%, 100%, 0.46);
 
 $fontSmall: 12px;
@@ -15,9 +15,10 @@ $fontXXL: 36px;
     margin: 0;
     box-sizing: border-box;
 }
-
-html {
-      overflow: hidden;      
+html, body {
+    overflow: auto;
+    height: 100%;
+    
 }
 
 a {
@@ -27,5 +28,34 @@ a {
 ul {
     padding: 0;
     list-style-type: none;
+}
+  // Prevent white space from showing between html and body elements.
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/* 
+ * Purpose:
+ * Assign height: "100%" to
+ * html, body, #___gatsby &  
+ * div with role="group"
+*/
+
+ body, html, #___gatsby {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+}
+
+div[role="group"][tabindex] {
+  height: 100%;
 }
 

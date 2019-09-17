@@ -20,7 +20,12 @@ export const SectionContainer = styled.section`
     h2 {
     font-family: "DM Sans-Bold", sans-serif;
     margin: 20px 0
-}
+    }
+
+    @media screen and (max-width: ${styleguide.desktopBreakpoint.min}) {
+        font-size: ${styleguide.fontMedium}
+    }
+
 
 
 `
