@@ -7,13 +7,10 @@ import Greeting from "../components/Greeting"
 
 const IndexPage = () => {
   return (
-    <div>
-
-    </div>
-    // <Layout>
-    //   <SEO title="Home" />
-    //   <Greeting />
-    // </Layout>
+    <Layout>
+      <SEO title="Home" />
+      <Greeting />
+    </Layout>
   )
 }
 
