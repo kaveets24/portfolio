@@ -5,7 +5,6 @@ import {
   ContactButton,
 } from "./styled"
 
-import { Animated } from "react-animated-css"
 
 const Contact = props => {
   return (
