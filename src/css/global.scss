@@ -22,9 +22,11 @@ html, body {
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-width: none;
+ 
 // Hide Scrollbar
-  ::-webkit-scrollbar { width: 0 !important }
-  
+
+  ::-webkit-scrollbar { width: 0 !important }  
 }
 
 a {
