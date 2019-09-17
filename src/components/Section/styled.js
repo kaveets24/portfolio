@@ -15,6 +15,14 @@ export const SectionContainer = styled.section`
         display: inline-block;
         line-height: 0.9;
         border-bottom: 2px solid ${styleguide.fontBlack};
+
+
+        :hover {
+            color: ${styleguide.secondaryOpacity};
+            border-color: ${styleguide.secondaryOpacity};
+            transition: color ${styleguide.hoverTransitionDuration}, border-color ${styleguide.hoverTransitionDuration};
+
+        }
     }
 
     h2 {

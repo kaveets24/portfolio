@@ -12,5 +12,6 @@ export const styleguide = {
     mobileBreakpoint: {min: "320px", max: "767px"},
     tabletBreakpoint: {min: "768px", max: "1023px"},
     desktopBreakpoint: {min: "1024px"},
+    hoverTransitionDuration: "0.4s"
 };
 

@@ -16,7 +16,8 @@ $fontXXL: 36px;
     box-sizing: border-box;
 }
 html, body {
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     height: 100%;
     
 }

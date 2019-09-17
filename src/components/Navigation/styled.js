@@ -63,7 +63,6 @@ const animation = props =>
     animation: ${props.animationTime} ${animationTypes[props.animation]} ease-in
       ${props.animationDelay} forwards;
   `
-
 export const Nav = styled.nav`
 
 `
@@ -73,13 +72,17 @@ export const Li = styled.li`
   position: absolute;
   top: 50vh;
   z-index: 1;
+  
 
 
     a:hover {
         color: ${styleguide.secondaryOpacity}; 
+        transition: color ${styleguide.hoverTransitionDuration};
         
         .back {
         stroke: ${styleguide.secondaryOpacity}; 
+        transition: stroke ${styleguide.hoverTransitionDuration};
+
       }
   
       }

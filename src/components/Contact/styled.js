@@ -23,7 +23,22 @@ export const ContactContainer = styled.div`
     :focus {
         outline: none
     }
+
   }
+  input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  ${border}
+  background-color: ${styleguide.backgroundColor};
+  -webkit-text-fill-color: ${styleguide.fontBlack};
+  transition: background-color 5000s ease-in-out 0s;
+}
 
   label {
   }
@@ -51,5 +66,11 @@ export const ContactButton = styled.button`
   background-color: ${styleguide.backgroundColor};
   width: 125px;
   ${border}
+
+  :hover {
+    color: ${styleguide.secondaryOpacity};
+    border-color: ${styleguide.secondaryOpacity};
+    transition: color ${styleguide.hoverTransitionDuration}, border-color ${styleguide.hoverTransitionDuration};
+  }
 
 `
