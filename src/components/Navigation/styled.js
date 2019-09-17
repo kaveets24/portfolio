@@ -16,17 +16,26 @@ const animationTypes = {
   moveFromTop: keyframes`
   0% {
     transform: translateY(-8em);
+    opacity: 0;
     
+  }
+  1% {
+    opacity: 1;
   }
   100% {
     transform: translateY(0em);
+    
   
   }
   `,
   moveFromRight: keyframes`
   0% {
     transform: translateX(8em) rotate(90deg);
+    opacity: 0;
     
+  }
+  1% {
+    opacity: 1;
   }
   100% {
     transform: translateX(0) rotate(90deg);
@@ -36,7 +45,11 @@ const animationTypes = {
   moveFromBottom: keyframes`
   0% {
     transform: translateY(8em);
+    opacity: 0;
     
+  }
+  1% {
+    opacity: 1;
   }
   100% {
     transform: translateY(0);
@@ -46,8 +59,11 @@ const animationTypes = {
   moveFromLeft: keyframes`
     0% {
       transform: translateX(-8em) rotate(-90deg);
+      opacity: 0;
     }
-
+    1% {
+      opacity: 1;
+  }
     100% {
       transform: translateX(0) rotate(-90deg);
     }
@@ -59,17 +75,14 @@ const animation = props =>
     animation: ${props.animationTime} ${animationTypes[props.animation]} ease-in
       ${props.animationDelay} forwards;
   `
-export const Nav = styled.nav`
-
-`
+export const Nav = styled.nav``
 // Main <li> component
 export const Li = styled.li`
   font-size: ${styleguide.fontLarge};
   position: absolute;
   top: 50vh;
   z-index: 1;
-  
-
+  animation-direction: forwards;
 
     a:hover {
         color: ${styleguide.secondaryOpacity}; 
@@ -93,35 +106,36 @@ export const Li = styled.li`
 // Top
 export const TopLi = styled(Li)`
   display: ${props =>
-    props.page === "/" || props.page.includes("about") ? "inline-block" : "none"}; 
-    text-align: center;
-    width: 100%;
-    top: 4em;
+    props.page === "/" || props.page.includes("about")
+      ? "inline-block"
+      : "none"};
+  text-align: center;
+  width: 100%;
+  top: 4em;
 `
 
 // Right
 export const RightLi = styled(Li)`
   display: ${props =>
     props.page === "/" || props.page.includes("resume") ? "initial" : "none"};
-    right: 4em;
-    transform: rotate(90deg);
-
+  right: 4em;
+  transform: rotate(90deg);
 `
 // Bottom
 
 export const BottomLi = styled(Li)`
   display: ${props =>
     props.page === "/" || props.page.includes("contact") ? "initial" : "none"};
-    top: initial;
-    bottom: 4em;
-    text-align: center;
-    width: 100%;
+  top: initial;
+  bottom: 4em;
+  text-align: center;
+  width: 100%;
 `
 
 export const LeftLi = styled(Li)`
   display: ${props =>
     props.page === "/" || props.page.includes("projects") ? "initial" : "none"};
-    ${props => console.log(props.page)}
-    left: 4em;
-    transform: rotate(-90deg);
+  ${props => console.log(props.page)}
+  left: 4em;
+  transform: rotate(-90deg);
 `
