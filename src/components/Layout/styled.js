@@ -21,6 +21,16 @@ const backgroundImageLoaded = props => css`
   background-image: url(${props.page === "/" ? img50: img10});
 `
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+
+`
+
 
 export const MainContainer = styled.main`
   @font-face {
@@ -42,6 +52,7 @@ export const MainContainer = styled.main`
   background-size: cover;
   ${props => props.imageLoaded ? backgroundImageLoaded : backgroundImagePreview}
   background-blend-mode: soft-light;
+  animation: ${fadeIn} 1.5s;
 
  
 

@@ -12,6 +12,7 @@ import { MainContainer } from "./styled"
 import { LayoutContext } from "../../context"
 import  Navigation  from "../Navigation"
 import  Greeting  from "../Greeting"
+import { Animated } from "react-animated-css"
 
 import { styleguide } from "../../utils"
 // import imgLarge from "../../images/brad-knight-chicago-unsplash-10.png";

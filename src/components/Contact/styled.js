@@ -51,6 +51,13 @@ select:-webkit-autofill:focus {
     background-color: ${styleguide.backgroundColor};
     margin: 20px 0 0 0;
 
+    :invalid {
+      box-shadow: none;
+    }
+    :required {
+      box-shadow: none;
+    }
+
     ::placeholder {
       color: ${styleguide.fontBlack};
     }
@@ -70,7 +77,7 @@ export const ContactButton = styled.button`
   :hover {
     color: ${styleguide.secondaryOpacity};
     border-color: ${styleguide.secondaryOpacity};
-    transition: color ${styleguide.hoverTransitionDuration}, border-color ${styleguide.hoverTransitionDuration};
+    transition: color ${styleguide.hoverTransitionDuration},
+      border-color ${styleguide.hoverTransitionDuration};
   }
-
 `
