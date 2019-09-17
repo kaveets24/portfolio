@@ -23,6 +23,10 @@ export const ContactContainer = styled.div`
     :focus {
         outline: none
     }
+     ::placeholder {
+      color: ${styleguide.fontBlack};
+      opacity: 1;
+    }
 
   }
   input:-webkit-autofill,
@@ -60,6 +64,7 @@ select:-webkit-autofill:focus {
 
     ::placeholder {
       color: ${styleguide.fontBlack};
+      opacity: 1;
     }
     :focus {
         outline: none
