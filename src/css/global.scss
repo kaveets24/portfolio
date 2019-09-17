@@ -15,13 +15,15 @@ $fontXXL: 36px;
     margin: 0;
     box-sizing: border-box;
 }
+
 html, body {
   
   height: 100%;
   -webkit-overflow-scrolling: touch;
-  :-webkit-scrollbar { width: 0 !important }
   overflow-y: auto;
   overflow-x: hidden;
+// Hide Scrollbar
+  ::-webkit-scrollbar { width: 0 !important }
   
 }
 
