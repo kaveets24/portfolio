@@ -82,17 +82,21 @@ export const Hamburger = styled.div`
   z-index: 3;
   right: 40px;
   top: 40px;
-  transition: fill ${styleguide.hoverTransitionDuration};
   cursor: pointer;
 
   :hover {
     .hamburger-border {
+      transition: stroke ${styleguide.hoverTransitionDuration};
       stroke: ${styleguide.secondaryOpacity};
+      
+
     }
     .hamburger-line {
+      transition: fill ${styleguide.hoverTransitionDuration};
       fill: ${styleguide.secondaryOpacity};
     }
     .back {
+      transition: stroke ${styleguide.hoverTransitionDuration};
       stroke: ${styleguide.secondaryOpacity};
     }
   }
@@ -120,6 +124,8 @@ const sectionBackButtonStyles = props => css`
   display: block;
   position: absolute;
   top: 4em;
+  height: 36px;
+  margin: 0;
   
 }
 
