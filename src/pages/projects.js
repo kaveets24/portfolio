@@ -23,7 +23,7 @@ const ProjectsPage = () => (
             hmnymusic.com
           </a>
         </p>
-        <p>Otherwise, checkout the video demo below:</p>
+        {/* <p>Otherwise, checkout the video demo below:</p> */}
       
         </Section>
   </Layout>
