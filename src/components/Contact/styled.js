@@ -16,6 +16,7 @@ export const ContactContainer = styled.div`
     padding: ${styleguide.formPadding};
     margin: 20px 0 0 0;
     background-color: ${styleguide.backgroundColor};
+    border-radius: 0;
     ::placeholder {
       color: ${styleguide.fontBlack};
     }
@@ -54,6 +55,7 @@ select:-webkit-autofill:focus {
     padding: ${styleguide.formPadding};
     background-color: ${styleguide.backgroundColor};
     margin: 20px 0 0 0;
+    border-radius: 0;
 
     :invalid {
       box-shadow: none;
