@@ -133,7 +133,7 @@ const Navigation = props => {
             animationDelay={animationDelay}
           >
             {isIndexPage ? (
-              <a rel="noopener noreferrer" href="https://we.tl/t-w5ubZzilkl" target="__blank">
+              <a rel="noopener noreferrer" href="https://www.dropbox.com/s/pvuin0q6io60bwe/steven-kveton.pdf?dl=0" target="__blank">
                 Resume
               </a>
             ) : (
