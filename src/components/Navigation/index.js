@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, withPrefix } from "gatsby"
 import { TopLi, RightLi, BottomLi, LeftLi, Nav, Hamburger } from "./styled"
 
 // import pdf from "../../assets/steven-kveton.pdf"
@@ -134,7 +134,7 @@ const Navigation = props => {
             animationDelay={animationDelay}
           >
             {isIndexPage ? (
-              <a href={pdf} target="__blank">
+              <a rel="noopener noreferrer" href={withPrefix('/steven-kveton.pdf')} target="__blank">
                 Resume
               </a>
             ) : (
