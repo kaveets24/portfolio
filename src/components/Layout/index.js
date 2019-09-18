@@ -11,7 +11,6 @@ import PropTypes from "prop-types"
 import { MainContainer } from "./styled"
 import { LayoutContext } from "../../context"
 import  Navigation  from "../Navigation"
-import  Greeting  from "../Greeting"
 
 import { styleguide } from "../../utils"
 // import imgLarge from "../../images/brad-knight-chicago-unsplash-10.png";
@@ -26,7 +25,8 @@ class Layout extends Component {
       transition: "background-position 3s",
       firstVisit: null,
       imageLoaded: false,
-      page: "home"
+      page: "home",
+      mobileNav: false
     }
   }
 
@@ -59,9 +59,22 @@ class Layout extends Component {
       imageLoaded: true,
     })
   }
+  handleHamburgerClick = () => {
+    this.setState({mobileNav: !this.state.mobileNav});
+  }
+
+  handleWindowResize = () => {
+    console.log(parseInt(styleguide.tabletBreakpoint.max))
+    if (window.innerWidth > parseInt(styleguide.tabletBreakpoint.max)) {
+      this.setState({
+        mobileNav: false
+      });
+    }
+
+  }
 
   componentDidMount() {
-
+    window.addEventListener("resize", this.handleWindowResize);
     window.onload = this.handleImageLoad();
     this.setState({
       firstVisit: this.checkIfFirstVisit(),
@@ -84,7 +97,7 @@ class Layout extends Component {
           }
           onMouseMove={this.handleMouseMove}
         >
-          <Navigation firstVisit={this.state.firstVisit} page={this.state.page}/>
+          <Navigation mobileNav={this.state.mobileNav} handleHamburgerClick={this.handleHamburgerClick} firstVisit={this.state.firstVisit} page={this.state.page}/>
           {this.props.children}
         </MainContainer>
       </LayoutContext.Provider>

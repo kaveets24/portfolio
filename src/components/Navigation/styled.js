@@ -70,36 +70,94 @@ const animationTypes = {
   `,
 }
 
+const mobileNav = props => css`
+  @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  } 
+`
+
 const animation = props =>
   css`
     animation: ${props.animationTime} ${animationTypes[props.animation]} ease-in
       ${props.animationDelay} forwards;
   `
-export const Nav = styled.nav``
+export const Nav = styled.nav`
+  ${mobileNav}
+
+  .mobileNav, .back {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    right: 40px;
+    top: 40px;
+    transition: fill ${styleguide.hoverTransitionDuration}, stroke ${styleguide.hoverTransitionDuration};
+
+    :hover {
+
+      .hamburger-border{
+        stroke: ${styleguide.secondaryOpacity}; 
+
+      }
+      .hamburger-line {
+        fill: ${styleguide.secondaryOpacity};
+        
+      }
+
+      .back {
+      stroke: ${styleguide.secondaryOpacity};
+    }
+
+
+    }
+
+    /* Mobile */
+    @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
+      display: block;
+    }
+  }
+`
 // Main <li> component
 export const Li = styled.li`
   font-size: ${styleguide.fontLarge};
-  position: absolute;
+  position: absolute; 
   top: 50vh;
   z-index: 1;
   animation-direction: forwards;
 
-    a:hover {
-        color: ${styleguide.secondaryOpacity}; 
-        transition: color ${styleguide.hoverTransitionDuration};
-        
-        .back {
-        stroke: ${styleguide.secondaryOpacity}; 
-        transition: stroke ${styleguide.hoverTransitionDuration};
+  a:hover {
+    color: ${styleguide.secondaryOpacity};
+    transition: color ${styleguide.hoverTransitionDuration};
 
-      }
-  
-      }
-     }
+    .back {
+      stroke: ${styleguide.secondaryOpacity};
+      transition: stroke ${styleguide.hoverTransitionDuration};
+    }
+  }
 
-/* Desktop */
+  /* Desktop */
   @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
     ${props => (props.firstVisit === "true" ? animation : "")}
+  }
+
+  /* Mobile */
+  @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: ${props => (props.mobileNav ? "block" : "none")};
+    position: relative;
+    transform: none;
+    text-align: center;
+    width: initial;
+    font-size: ${styleguide.fontXL};
+    line-height: 40px;
+    margin-bottom: 20px;
   }
 `
 

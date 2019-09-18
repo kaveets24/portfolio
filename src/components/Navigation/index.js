@@ -5,69 +5,152 @@ import { TopLi, RightLi, BottomLi, LeftLi, Nav } from "./styled"
 // import pdf from "../../assets/steven-kveton.pdf"
 import pdf from "file-loader?name=[name].[ext]!../../../static/steven-kveton.pdf"
 
-import backButtonImg from "../../images/back-button.svg"
+const Navigation = props => {
+  let animationTime = "0.7s"
+  let animationDelay = "0s"
+  let isIndexPage = props.page === "/";
 
-import { LayoutContext } from "../../context"
+  let backButton =
+      <Link to={"/"}>
+        <svg
+          onClick={props.mobileNav ? props.handleHamburgerClick : false}
+          className="back"
+          width="36"
+          height="36"
+          viewBox="0 0 36 36"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            className="back"
+            y1="-1"
+            x2="23.4483"
+            y2="-1"
+            transform="matrix(0.707107 -0.707107 0.669938 0.742417 9.8501 26.5804)"
+            stroke="black"
+            strokeWidth="2"
+          />
+          <line
+            className="back"
+            y1="-1"
+            x2="23.4483"
+            y2="-1"
+            transform="matrix(0.707107 0.707107 -0.669938 0.742417 9 10)"
+            stroke="black"
+            strokeWidth="2"
+          />
+          <rect
+            className="back"
+            x="1"
+            y="1"
+            width="34"
+            height="34"
+            stroke="black"
+            strokeWidth="2"
+          />
+        </svg>
+      </Link>
+    
 
-
-
-const Navigation = (props) => {
-  const animationTime = "0.7s"
-  const animationDelay = "0s"
-
-  // Should listen to global context api for firstLoad property. After first load, animation delays should be set close to or equal to 0
-  let backButton = props.page === "/" ? false : <Link to={"/"}><svg className="back" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <line className="back" y1="-1" x2="23.4483" y2="-1" transform="matrix(0.707107 -0.707107 0.669938 0.742417 9.8501 26.5804)" stroke="black" stroke-width="2"/>
-  <line className="back" y1="-1" x2="23.4483" y2="-1" transform="matrix(0.707107 0.707107 -0.669938 0.742417 9 10)" stroke="black" stroke-width="2"/>
-  <rect className="back" x="1" y="1" width="34" height="34" stroke="black" stroke-width="2"/>
-  </svg>
-  </Link>
+  let hamburger =
+      <svg
+        onClick={props.handleHamburgerClick}
+        className="mobileNav"
+        width="36"
+        height="36"
+        viewBox="0 0 36 36"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          className="mobileNav hamburger-line"
+          x="11"
+          y="9"
+          width="14"
+          height="2"
+          fill="black"
+        />
+        <rect
+          className="mobileNav hamburger-line"
+          x="11"
+          y="17"
+          width="14"
+          height="2"
+          fill="black"
+        />
+        <rect
+          className="mobileNav hamburger-line"
+          x="11"
+          y="25"
+          width="14"
+          height="2"
+          fill="black"
+        />
+        <rect
+          className="mobileNav hamburger-border"
+          x="1"
+          y="1"
+          width="34"
+          height="34"
+          stroke="black"
+          strokeWidth="2"
+        />
+      </svg>
 
   return (
-        <Nav>
-        <ul>
-          <TopLi
-            firstVisit={props.firstVisit}
-            page={props.page}
-            animation={"moveFromTop"}
-            animationTime={animationTime}
-            animationDelay={animationDelay}
-          >
-           {backButton || <Link onClick={props.onNavClick} to="/about">About Me</Link> } 
-          </TopLi>
-          <RightLi
-            firstVisit={props.firstVisit}
-            page={props.page}
-            animation={"moveFromRight"}
-            animationTime={animationTime}
-            animationDelay={animationDelay}
-          >
-            {backButton || <a href={pdf} target="__blank">
+    <Nav>
+        { props.mobileNav ? backButton : hamburger }
+      <ul>
+        <TopLi
+          mobileNav={props.mobileNav}
+          firstVisit={props.firstVisit}
+          page={props.page}
+          animation={"moveFromTop"}
+          animationTime={animationTime}
+          animationDelay={animationDelay}
+        >
+          {isIndexPage ?  
+            <Link onClick={props.onNavClick} to="/about">
+              About Me
+            </Link> : backButton
+          }
+        </TopLi>
+        <RightLi
+          mobileNav={props.mobileNav}
+          firstVisit={props.firstVisit}
+          page={props.page}
+          animation={"moveFromRight"}
+          animationTime={animationTime}
+          animationDelay={animationDelay}
+        >
+          {isIndexPage ?
+            <a href={pdf} target="__blank">
               Resume
-            </a>}
-          </RightLi>
-          <BottomLi
-            firstVisit={props.firstVisit}
-            page={props.page}
-            animation={"moveFromBottom"}
-            animationTime={animationTime}
-            animationDelay={animationDelay}
-          >
-            {backButton || <Link to="/contact">Contact</Link>}
-          </BottomLi>
-          <LeftLi
-            firstVisit={props.firstVisit}
-            page={props.page}
-            animation={"moveFromLeft"}
-            animationTime={animationTime}
-            animationDelay={animationDelay}
-          >
-            {backButton || <Link to={"/projects"}>Projects</Link>}
-          </LeftLi>
-        </ul>
-      </Nav>
-        // </LayoutContext.Consumer>
-       
+            </a> : backButton
+          }
+        </RightLi>
+        <BottomLi
+          mobileNav={props.mobileNav}
+          firstVisit={props.firstVisit}
+          page={props.page}
+          animation={"moveFromBottom"}
+          animationTime={animationTime}
+          animationDelay={animationDelay}
+        >
+          {isIndexPage ? <Link to="/contact">Contact</Link> : backButton}
+        </BottomLi>
+        <LeftLi
+          mobileNav={props.mobileNav}
+          firstVisit={props.firstVisit}
+          page={props.page}
+          animation={"moveFromLeft"}
+          animationTime={animationTime}
+          animationDelay={animationDelay}
+        >
+          {isIndexPage ?  <Link to={"/projects"}>Projects</Link> : backButton }
+        </LeftLi>
+      </ul>
+    </Nav>
   )
 }
 

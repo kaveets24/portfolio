@@ -11,7 +11,7 @@ const fadeIn = keyframes`
 `
 
 export const GreetingContainer = styled.div`
-  display: flex;
+  display: ${props => props.mobileNav ? "none" : "flex"};
   flex-direction: column;
   font-size: ${styleguide.fontXXL};
   position: absolute;
@@ -28,12 +28,14 @@ export const GreetingContainer = styled.div`
   
   // Mobile and Tablet
   @media (max-width: ${styleguide.tabletBreakpoint.max}) {
-    font-size: ${styleguide.fontLarge};
+    font-size: ${styleguide.fontXL};
   }
 
   // Mobile
   @media (max-width: ${styleguide.mobileBreakpoint.max}) {
     // margin: 0;  
+    font-size: ${styleguide.fontXL};
+    padding: 0 20px;
   }
 
 `
