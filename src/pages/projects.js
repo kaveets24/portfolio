@@ -10,8 +10,7 @@ const ProjectsPage = () => (
         <h2>Hmny</h2>
         <p>
           Hmny (härmənē) is a music streaming application that lets users build
-          playlists using songs from Spotify and YouTube. It's built with React
-          and Redux.
+          playlists using songs from Spotify and YouTube. It's built with React, Redux and Express.
         </p>
         <p>
           <a href="https://github.com/kaveets24/hmny" target="__blank">

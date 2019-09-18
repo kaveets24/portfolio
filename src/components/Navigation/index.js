@@ -2,7 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 import { TopLi, RightLi, BottomLi, LeftLi, Nav } from "./styled"
 
-import pdf from "../../images/steven.kveton.pdf"
+// import pdf from "../../assets/steven-kveton.pdf"
+import pdf from "file-loader?name=[name].[ext]!../../../static/steven-kveton.pdf"
+
 import backButtonImg from "../../images/back-button.svg"
 
 import { LayoutContext } from "../../context"
