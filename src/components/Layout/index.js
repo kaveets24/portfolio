@@ -88,6 +88,7 @@ class Layout extends Component {
         <MainContainer
           page={this.state.page}
           imageLoaded={this.state.imageLoaded}
+          mobileNav={this.state.mobileNav}
           style={
             {
               // backgroundPositionX: this.state.backgroundPositionX,

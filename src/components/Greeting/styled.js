@@ -25,6 +25,7 @@ export const GreetingContainer = styled.div`
   text-align: center;
   justify-content: center;
   align-items: center;
+  user-select: none;
   
   // Mobile and Tablet
   @media (max-width: ${styleguide.tabletBreakpoint.max}) {

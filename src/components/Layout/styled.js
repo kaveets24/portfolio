@@ -18,7 +18,7 @@ const backgroundImagePreview = props => css`
 
 const backgroundImageLoaded = props => css`
 /* Show background with opacity 50 only on home page */
-  background-image: url(${props.page === "/" ? img50: img10});
+  background-image: url(${props.page === "/" && !props.mobileNav ? img50: img10});
 `
 
 const fadeIn = keyframes`
