@@ -102,7 +102,8 @@ export const Hamburger = styled.div`
     display: block;
   }
 `
-export const Nav = styled.nav`
+
+const isIndexPageStyles = props => css`
   @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
     height: 100vh;
     display: flex;
@@ -111,6 +112,22 @@ export const Nav = styled.nav`
     justify-content: center;
     text-align: center;
   }
+`
+
+const isAboutPageStyles = props => css`
+
+@media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
+  display: block;
+  position: absolute;
+  
+}
+
+
+`
+export const Nav = styled.nav`
+${props => props.isIndexPage ? isIndexPageStyles : ""}
+
+
 `
 // Main <li> component
 export const Li = styled.li`
@@ -154,18 +171,20 @@ export const Li = styled.li`
 // Top
 export const TopLi = styled(Li)`
   display: ${props =>
-    props.page === "/" || props.page.includes("about")
+    props.isIndexPage || props.page.includes("about")
       ? "inline-block"
       : "none"};
   text-align: center;
   width: 100%;
   top: 4em;
+  ${props => (props.page.includes("about") ? isAboutPageStyles : "")};
+
 `
 
 // Right
 export const RightLi = styled(Li)`
   display: ${props =>
-    props.page === "/" || props.page.includes("resume") ? "initial" : "none"};
+    props.isIndexPage || props.page.includes("resume") ? "initial" : "none"};
   right: 4em;
   transform: rotate(90deg);
 `

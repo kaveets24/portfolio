@@ -100,13 +100,18 @@ const Navigation = props => {
 
   return (
     <div>
-      <Hamburger>{props.mobileNav ? backButton : hamburger}</Hamburger>
-      <Nav>
+      {isIndexPage ? (
+        <Hamburger>{props.mobileNav ? backButton : hamburger}</Hamburger>
+      ) : (
+        ""
+      )}
+      <Nav isIndexPage={isIndexPage}>
         <ul>
           <TopLi
             mobileNav={props.mobileNav}
             firstVisit={props.firstVisit}
             page={props.page}
+            isIndexPage={isIndexPage}
             animation={"moveFromTop"}
             animationTime={animationTime}
             animationDelay={animationDelay}
@@ -123,6 +128,7 @@ const Navigation = props => {
             mobileNav={props.mobileNav}
             firstVisit={props.firstVisit}
             page={props.page}
+            isIndexPage={isIndexPage}
             animation={"moveFromRight"}
             animationTime={animationTime}
             animationDelay={animationDelay}
@@ -138,6 +144,7 @@ const Navigation = props => {
           <BottomLi
             mobileNav={props.mobileNav}
             firstVisit={props.firstVisit}
+            isIndexPage={isIndexPage}
             page={props.page}
             animation={"moveFromBottom"}
             animationTime={animationTime}
@@ -148,6 +155,7 @@ const Navigation = props => {
           <LeftLi
             mobileNav={props.mobileNav}
             firstVisit={props.firstVisit}
+            isIndexPage={isIndexPage}
             page={props.page}
             animation={"moveFromLeft"}
             animationTime={animationTime}
