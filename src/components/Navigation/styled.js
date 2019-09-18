@@ -70,7 +70,39 @@ const animationTypes = {
   `,
 }
 
-const mobileNav = props => css`
+const animation = props =>
+  css`
+    animation: ${props.animationTime} ${animationTypes[props.animation]} ease-in
+      ${props.animationDelay} forwards;
+  `
+
+export const Hamburger = styled.div`
+  display: none;
+  position: absolute;
+  z-index: 3;
+  right: 40px;
+  top: 40px;
+  transition: fill ${styleguide.hoverTransitionDuration};
+  cursor: pointer;
+
+  :hover {
+    .hamburger-border {
+      stroke: ${styleguide.secondaryOpacity};
+    }
+    .hamburger-line {
+      fill: ${styleguide.secondaryOpacity};
+    }
+    .back {
+      stroke: ${styleguide.secondaryOpacity};
+    }
+  }
+
+  /* Mobile */
+  @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
+    display: block;
+  }
+`
+export const Nav = styled.nav`
   @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
     height: 100vh;
     display: flex;
@@ -78,56 +110,14 @@ const mobileNav = props => css`
     align-items: center;
     justify-content: center;
     text-align: center;
-  } 
-`
-
-const animation = props =>
-  css`
-    animation: ${props.animationTime} ${animationTypes[props.animation]} ease-in
-      ${props.animationDelay} forwards;
-  `
-export const Nav = styled.nav`
-  ${mobileNav}
-
-  .mobileNav, .back {
-    display: none;
-    position: absolute;
-    z-index: 3;
-    right: 40px;
-    top: 40px;
-    transition: fill ${styleguide.hoverTransitionDuration}, stroke ${styleguide.hoverTransitionDuration};
-
-    :hover {
-
-      .hamburger-border{
-        stroke: ${styleguide.secondaryOpacity}; 
-
-      }
-      .hamburger-line {
-        fill: ${styleguide.secondaryOpacity};
-        
-      }
-
-      .back {
-      stroke: ${styleguide.secondaryOpacity};
-    }
-
-
-    }
-
-    /* Mobile */
-    @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
-      display: block;
-    }
   }
 `
 // Main <li> component
 export const Li = styled.li`
   font-size: ${styleguide.fontLarge};
-  position: absolute; 
+  position: absolute;
   top: 50vh;
   z-index: 1;
-  animation-direction: forwards;
 
   a:hover {
     color: ${styleguide.secondaryOpacity};
