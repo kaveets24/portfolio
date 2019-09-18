@@ -126,7 +126,8 @@ const sectionBackButtonStyles = props => css`
 
 `
 export const Nav = styled.nav`
-${props => props.isIndexPage ? isIndexPageStyles : ""}
+  ${props => props.isIndexPage ? isIndexPageStyles : ""}
+  user-select: none;
 
 
 `
