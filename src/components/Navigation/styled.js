@@ -114,11 +114,12 @@ const isIndexPageStyles = props => css`
   }
 `
 
-const isAboutPageStyles = props => css`
+const sectionBackButtonStyles = props => css`
 
 @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
   display: block;
   position: absolute;
+  top: 4em;
   
 }
 
@@ -177,7 +178,7 @@ export const TopLi = styled(Li)`
   text-align: center;
   width: 100%;
   top: 4em;
-  ${props => (props.page.includes("about") ? isAboutPageStyles : "")};
+  ${props => (!props.isIndexPage ? sectionBackButtonStyles : "")};
 
 `
 
