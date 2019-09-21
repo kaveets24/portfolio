@@ -148,6 +148,9 @@ export const Li = styled.li`
   top: 50vh;
   z-index: 1;
 
+  /* Animation */
+  ${props => (props.firstVisit === "true" ? animation : "")}
+
   a:hover {
     color: ${styleguide.secondaryOpacity};
     transition: color ${styleguide.hoverTransitionDuration};
@@ -158,10 +161,7 @@ export const Li = styled.li`
     }
   }
 
-  /* Desktop */
-  @media screen and (min-width: ${styleguide.desktopBreakpoint.min}) {
-    ${props => (props.firstVisit === "true" ? animation : "")}
-  }
+
 
   /* Mobile */
   @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
