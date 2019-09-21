@@ -54,7 +54,6 @@ class Layout extends Component {
   }
 
   handleImageLoad = () => {
-    console.log("image loaded")
     this.setState({
       imageLoaded: true,
     })
@@ -64,7 +63,6 @@ class Layout extends Component {
   }
 
   handleWindowResize = () => {
-    console.log(parseInt(styleguide.tabletBreakpoint.max))
     if (window.innerWidth > parseInt(styleguide.tabletBreakpoint.max)) {
       this.setState({
         mobileNav: false

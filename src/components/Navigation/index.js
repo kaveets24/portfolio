@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { TopLi, RightLi, BottomLi, LeftLi, Nav, Hamburger } from "./styled"
 
-import pdf from "file-loader?name=[name].[ext]!../../../static/steven-kveton.pdf"
+// import pdf from "file-loader?name=[name].[ext]!../../../static/steven-kveton.pdf"
 
 const Navigation = props => {
   let animationTime = "0.7s"

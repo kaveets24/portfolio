@@ -122,10 +122,14 @@ const sectionBackButtonStyles = props => css`
 
 @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
   display: block;
-  position: absolute;
-  top: 4em;
+  position: relative;
   height: 36px;
-  margin: 0;
+
+  svg {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
   
 }
 
@@ -185,7 +189,7 @@ export const TopLi = styled(Li)`
   text-align: center;
   width: 100%;
   top: 4em;
-  ${props => (!props.isIndexPage ? sectionBackButtonStyles : "")};
+  ${props => (props.isIndexPage ? "": sectionBackButtonStyles)};
 
 `
 
