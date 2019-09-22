@@ -11,7 +11,7 @@ const AboutMePage = () => (
             Designory
           </a>{" "}
           building automated testing tools for our clients' websites. I also
-          helped build <a href="https://www.myplenity.com">MyPlenity.com.</a>{" "}
+          helped build <a href="https://www.myplenity.com" target="__blank">MyPlenity.com.</a>{" "}
           Day to day, I'm working with JavaScript (Node.js), Puppeteer and
           Nightwatch.js.
         </p>

@@ -81,7 +81,7 @@ export const SectionContainer = styled.section`
 
   @media screen and (max-width: ${styleguide.desktopBreakpoint.min}) {
     font-size: ${styleguide.fontMedium};
-    padding: 20px 40px 0 40px;
+    padding: 20px 20px 20px 20px;
 
 
   }
