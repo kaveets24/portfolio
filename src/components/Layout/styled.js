@@ -45,21 +45,14 @@ export const MainContainer = styled.main`
   position: relative;  
   font-size: ${styleguide.fontXL};
   color: ${styleguide.fontBlack};
-  height: ${props => props.page === "/" && !props.mobileNav ? "100%": "auto"};
-
-
+  height: 100%;
   background: no-repeat center center fixed;
   background-color: ${styleguide.backgroundColor};
   background-size: cover;
-  /* ${props => props.imageLoaded ? backgroundImageLoaded : backgroundImagePreview} */ 
+  /* ${props => props.imageLoaded ? backgroundImageLoaded : backgroundImagePreview} */
   ${backgroundImageLoaded}
   background-blend-mode: soft-light;
   animation: ${fadeIn} 1.5s;
-
-  @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
-    height: 100%;
-
-  }
 
 
  
