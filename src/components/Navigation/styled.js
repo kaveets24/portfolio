@@ -144,7 +144,7 @@ export const Nav = styled.nav`
 // Main <li> component
 export const Li = styled.li`
   font-size: ${styleguide.fontLarge};
-  position: absolute;
+  position: fixed;
   top: 50vh;
   z-index: 1;
 
