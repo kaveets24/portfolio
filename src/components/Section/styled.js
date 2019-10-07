@@ -56,6 +56,11 @@ export const SectionContainer = styled.section`
   padding: 205px 20px 0 20px;
   animation: ${props => animations[props.animation]} 1s;
 
+
+  li {
+    padding: 20px 0;
+  }
+
   p {
     margin: 20px 0;
     line-height: 40px;

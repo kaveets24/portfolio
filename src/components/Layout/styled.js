@@ -45,7 +45,9 @@ export const MainContainer = styled.main`
   position: relative;  
   font-size: ${styleguide.fontXL};
   color: ${styleguide.fontBlack};
-  height: 100%;
+  height: ${props => props.page === "/" && !props.mobileNav ? "100%": "auto"};
+
+
   background: no-repeat center center fixed;
   background-color: ${styleguide.backgroundColor};
   background-size: cover;
@@ -53,6 +55,11 @@ export const MainContainer = styled.main`
   ${backgroundImageLoaded}
   background-blend-mode: soft-light;
   animation: ${fadeIn} 1.5s;
+
+  @media screen and (max-width: ${styleguide.tabletBreakpoint.max}) {
+    height: 100%;
+
+  }
 
 
  
