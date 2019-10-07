@@ -49,7 +49,8 @@ export const MainContainer = styled.main`
   background: no-repeat center center fixed;
   background-color: ${styleguide.backgroundColor};
   background-size: cover;
-  ${props => props.imageLoaded ? backgroundImageLoaded : backgroundImagePreview}
+  /* ${props => props.imageLoaded ? backgroundImageLoaded : backgroundImagePreview} */ 
+  ${backgroundImageLoaded}
   background-blend-mode: soft-light;
   animation: ${fadeIn} 1.5s;
 
