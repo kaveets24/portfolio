@@ -57,7 +57,19 @@ ul {
 
  body, html, #___gatsby {
   height: 100%;
+  
+}
+
+html {
+  background: url("../images/brad-knight-chicago-unsplash-50.png") no-repeat center center fixed; 
   background-color: $backgroundColor;
+  background-blend-mode: soft-light;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
 }
 
 body {

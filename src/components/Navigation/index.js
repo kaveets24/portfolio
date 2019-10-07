@@ -12,7 +12,7 @@ const Navigation = props => {
   let backButton = (
     <Link to={"/"}>
       <svg
-        onClick={props.mobileNav ? props.handleHamburgerClick : false}
+        onClick={props.mobileNav ? props.handleHamburgerClick : undefined}
         className="back"
         width="36"
         height="36"

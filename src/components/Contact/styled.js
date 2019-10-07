@@ -8,14 +8,17 @@ const border = props => css`
 export const ContactContainer = styled.div`
   form {
     color: ${styleguide.fontBlack};
+    background: transparent;
+
   }
   input {
     ${border}
     width: 100%;
     height: 64px;
     padding: ${styleguide.formPadding};
+    background: transparent;
+
     margin: 20px 0 0 0;
-    background-color: ${styleguide.backgroundColor};
     border-radius: 0;
     ::placeholder {
       color: ${styleguide.fontBlack};
@@ -40,7 +43,8 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   ${border}
-  background-color: ${styleguide.backgroundColor};
+  background: transparent;
+
   -webkit-text-fill-color: ${styleguide.fontBlack};
   transition: background-color 5000s ease-in-out 0s;
 }
@@ -53,7 +57,8 @@ select:-webkit-autofill:focus {
     color: ${styleguide.fontBlack};
     width: 100%;
     padding: ${styleguide.formPadding};
-    background-color: ${styleguide.backgroundColor};
+    background: transparent;
+
     margin: 20px 0 0 0;
     border-radius: 0;
 
@@ -77,7 +82,8 @@ select:-webkit-autofill:focus {
 export const ContactButton = styled.button`
   padding: ${styleguide.formPadding};
   margin: 20px auto;
-  background-color: ${styleguide.backgroundColor};
+  background: transparent;
+
   width: 125px;
   ${border}
 

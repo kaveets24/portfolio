@@ -71,6 +71,10 @@ class Layout extends Component {
 
   }
 
+  componentWillUnmount() {
+      window.removeEventListener("resize", this.handleWindowResize);
+  }
+
   componentDidMount() {
     window.addEventListener("resize", this.handleWindowResize);
     window.onload = this.handleImageLoad();
