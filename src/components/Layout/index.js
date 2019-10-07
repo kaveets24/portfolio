@@ -8,16 +8,16 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 
-import { MainContainer } from "./styled"
+import { MainContainer, GlobalStyle } from "./styled"
 import { LayoutContext } from "../../context"
-import  Navigation  from "../Navigation"
+import Navigation from "../Navigation"
 
 import { styleguide } from "../../utils"
 // import imgLarge from "../../images/brad-knight-chicago-unsplash-10.png";
 
 class Layout extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       backgroundSize: "cover",
       backgroundPositionX: "center",
@@ -26,10 +26,9 @@ class Layout extends Component {
       firstVisit: null,
       imageLoaded: false,
       page: "home",
-      mobileNav: false
+      mobileNav: false,
     }
   }
-
 
   checkIfFirstVisit = () => {
     let firstVisit = window.sessionStorage.getItem("firstVisit")
@@ -59,48 +58,50 @@ class Layout extends Component {
     })
   }
   handleHamburgerClick = () => {
-    this.setState({mobileNav: !this.state.mobileNav});
+    this.setState({ mobileNav: !this.state.mobileNav })
   }
 
   handleWindowResize = () => {
     if (window.innerWidth > parseInt(styleguide.tabletBreakpoint.max)) {
       this.setState({
-        mobileNav: false
-      });
+        mobileNav: false,
+      })
     }
-
   }
 
   componentWillUnmount() {
-      window.removeEventListener("resize", this.handleWindowResize);
+    window.removeEventListener("resize", this.handleWindowResize)
   }
 
   componentDidMount() {
-    window.addEventListener("resize", this.handleWindowResize);
-    window.onload = this.handleImageLoad();
+    window.addEventListener("resize", this.handleWindowResize)
+    window.onload = this.handleImageLoad()
     this.setState({
       firstVisit: this.checkIfFirstVisit(),
-      page: window.location.pathname
+      page: window.location.pathname,
     })
   }
 
   render() {
     return (
       <LayoutContext.Provider value={this.state}>
+        <GlobalStyle
+          page={this.state.page}
+          imageLoaded={this.state.imageLoaded}
+          mobileNav={this.state.mobileNav}
+        />
         <MainContainer
           page={this.state.page}
           imageLoaded={this.state.imageLoaded}
           mobileNav={this.state.mobileNav}
-          style={
-            {
-              // backgroundPositionX: this.state.backgroundPositionX,
-              // backgroundPositionY: this.state.backgroundPositionY,
-              // transition: this.state.transition
-            }
-          }
           onMouseMove={this.handleMouseMove}
         >
-          <Navigation mobileNav={this.state.mobileNav} handleHamburgerClick={this.handleHamburgerClick} firstVisit={this.state.firstVisit} page={this.state.page}/>
+          <Navigation
+            mobileNav={this.state.mobileNav}
+            handleHamburgerClick={this.handleHamburgerClick}
+            firstVisit={this.state.firstVisit}
+            page={this.state.page}
+          />
           {this.props.children}
         </MainContainer>
       </LayoutContext.Provider>
