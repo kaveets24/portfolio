@@ -214,7 +214,6 @@ export const BottomLi = styled(Li)`
 export const LeftLi = styled(Li)`
   display: ${props =>
     props.page === "/" || props.page.includes("projects") ? "initial" : "none"};
-  ${props => console.log(props.page)}
   left: 4em;
   transform: rotate(-90deg);
 `
