@@ -58,7 +58,7 @@ export const SectionContainer = styled.section`
 
 
   li {
-    padding: 20px 0;
+    padding: 0 0 20px 0;
   }
 
   p {
@@ -81,7 +81,7 @@ export const SectionContainer = styled.section`
 
   h2 {
     font-family: "DM Sans-Bold", sans-serif;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
   }
 
   @media screen and (max-width: ${styleguide.desktopBreakpoint.min}) {
