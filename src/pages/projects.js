@@ -19,8 +19,6 @@ const ProjectsPage = () => (
                 MetaWeather API
               </a>
               .
-              It was a fun weekend project where I set out to
-              learn a bit about React Hooks. 
             </p>
             <p>
               <a
