@@ -62,9 +62,11 @@ export const MainContainer = styled.main`
   animation: ${fadeIn} 1.5s;
 
   .social-media {
-    position: absolute;
+    position: fixed;
     right: 10px;
     bottom: 10px;
+
+   display: ${props => props.page === "/" ? "block": "none"};
 
     svg {
       width: 20px;
