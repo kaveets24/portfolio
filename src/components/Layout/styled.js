@@ -63,7 +63,7 @@ export const MainContainer = styled.main`
 
   .social-media {
     position: absolute;
-    left: 10px;
+    right: 10px;
     bottom: 10px;
 
     svg {
