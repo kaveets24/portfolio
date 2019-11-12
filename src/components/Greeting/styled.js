@@ -10,7 +10,7 @@ const fadeIn = keyframes`
   }
 `
 
-export const GreetingContainer = styled.div`
+export const GreetingContainer = styled.section`
   display: ${props => props.mobileNav ? "none" : "flex"};
   flex-direction: column;
   font-size: ${styleguide.fontXXL};

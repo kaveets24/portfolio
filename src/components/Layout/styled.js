@@ -25,9 +25,7 @@ const fadeIn = keyframes`
 `
 const globalCss = props => css`
   background: no-repeat center center fixed;
-  background-image: url(${props.page === "/" && !props.mobileNav
-    ? img50
-    : img10});
+  background-image: url(${props.page === "/" && !props.mobileNav ? img50 : img10});
   background-color: ${styleguide.backgroundColor};
   background-blend-mode: soft-light;
 

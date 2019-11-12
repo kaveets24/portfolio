@@ -6,14 +6,10 @@ const AboutMePage = () => (
       <Section animation={"fadeInDown"}>
         <h2>About Me</h2>
         <p>
-          Currently, I work over at{" "}
-          <a href="https://www.designory.com/" target="__blank">
-            Designory
+          I'm currently working over at{" "}
+          <a href="https://www.thirdwavellc.com/" target="__blank">
+            Thirdwave.
           </a>{" "}
-          building automated testing tools for our clients' websites. I also
-          helped build <a href="https://www.myplenity.com" target="__blank">MyPlenity.com.</a>{" "}
-          Day to day, I'm working with JavaScript (Node.js), Puppeteer and
-          Nightwatch.js.
         </p>
         <p>
           I love ideating solutions to difficult problems, and learning modern

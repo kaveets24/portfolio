@@ -10,9 +10,10 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <LayoutContext.Consumer>
-        {value => <Greeting mobileNav={value.mobileNav} firstVisit={value.firstVisit} />}
+        {value => (
+          <Greeting mobileNav={value.mobileNav} firstVisit={value.firstVisit} />
+        )}
       </LayoutContext.Consumer>
-      
     </Layout>
   )
 }
