@@ -74,7 +74,7 @@ function SEO({ description, lang, meta, title }) {
 
 SEO.defaultProps = {
   lang: `en`,
-  meta: [],
+  meta: ["front end developer", "front-end", "user interface", "WordPress", "Chicago", "React"],
   description: ``,
 }
 

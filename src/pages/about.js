@@ -6,10 +6,11 @@ const AboutMePage = () => (
       <Section animation={"fadeInDown"}>
         <h2>About Me</h2>
         <p>
-          I'm currently working over at{" "}
+          Currently, I serve as a UI developer over at{" "}
           <a href="https://www.thirdwavellc.com/" target="__blank">
-            Thirdwave.
+            Thirdwave
           </a>{" "}
+          in River North.
         </p>
         <p>
           I love ideating solutions to difficult problems, and learning modern
