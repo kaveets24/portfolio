@@ -6,24 +6,15 @@ const AboutMePage = () => (
       <Section animation={"fadeInDown"}>
         <h2>About Me</h2>
         <p>
-          Currently, I serve as a UI developer over at{" "}
-          <a href="https://www.thirdwavellc.com/" target="__blank">
-            Thirdwave
+          Currently, I serve as a frontend engineer over at{" "}
+          <a href="https://foxtrotco.com/" target="__blank">
+            Foxtrot
           </a>{" "}
           in River North.
         </p>
         <p>
           I love ideating solutions to difficult problems, and learning modern
           front-end technologies in order to get the job done efficiently.
-        </p>
-        <p>
-          Most recently, I've been working on{" "}
-          <a href="https://www.hmnymusic.com" target="__blank">
-            Hmny
-          </a> 
-          , a music streaming app that lets users build playlists using songs
-          from Spotify and YouTube. I've had tons of fun building it in React,
-          and manage the UI's global state with Redux.
         </p>
         <p>
           In my freetime, I love tinkering with synthesizers, samplers and drum

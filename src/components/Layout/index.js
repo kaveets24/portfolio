@@ -42,7 +42,6 @@ class Layout extends Component {
   }
 
   handleImageLoad = () => {
-    console.log("Image Loaded!")
     this.setState({
       imageLoaded: true,
     })
